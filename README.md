@@ -1,5 +1,7 @@
 # Curso de React
 
+**Versión 1.0**
+
 Curso abierto para aprender a construir **interfaces web modernas con React**, comprendiendo su modelo de componentes, estado, renderizado y efectos antes de introducir abstracciones adicionales.
 
 ## Requisitos recomendados
