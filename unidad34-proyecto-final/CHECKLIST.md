@@ -1,0 +1,16 @@
+# Checklist
+- [ ] Componentes con responsabilidades claras.
+- [ ] Props no mutadas.
+- [ ] Estado mínimo.
+- [ ] Keys estables.
+- [ ] No hay efectos para valores derivados.
+- [ ] Cleanup cuando aplica.
+- [ ] loading/error/empty.
+- [ ] Solicitudes obsoletas controladas.
+- [ ] HTML semántico.
+- [ ] Teclado/foco.
+- [ ] Tests de comportamiento.
+- [ ] Sin secretos en frontend.
+- [ ] Build funciona.
+- [ ] Rutas publicadas funcionan.
+- [ ] README.
