@@ -1,5 +1,7 @@
 # Unidad 24 — Pruebas de componentes
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Probar componentes desde el contrato visible para el usuario en lugar de detalles internos.
 
@@ -103,3 +105,12 @@ Suite de formulario usando labels/roles y comportamiento observable.
 - [ ] Mocks en límites.
 
 Continúa con flujos.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 23 — Accesibilidad en React](../unidad23-accesibilidad/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 25 — Pruebas de flujos asíncronos](../unidad25-pruebas-flujos/README.md)

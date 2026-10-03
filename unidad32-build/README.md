@@ -1,5 +1,7 @@
 # Unidad 32 — Build y publicación de una SPA
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Construir, previsualizar y publicar React comprobando rutas, base path, assets y configuración.
 
@@ -101,3 +103,12 @@ SPA publicada donde una ruta interna funciona al abrirse directamente.
 - [ ] Auditoría pública.
 
 Continúa con taller.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 31 — Configuración y variables de entorno](../unidad31-configuracion/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 33 — Taller integrador React](../unidad33-taller/README.md)

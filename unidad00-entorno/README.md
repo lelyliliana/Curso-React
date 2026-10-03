@@ -1,5 +1,7 @@
 # Unidad 00 — Entorno y primer proyecto React
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Crear, ejecutar, construir y diagnosticar una aplicación React con una herramienta moderna.
 
@@ -159,3 +161,11 @@ Proyecto clonable con README mínimo y comandos dev/build/preview verificados.
 - [ ] Construyo build.
 
 Continúa con modelo mental.
+
+
+---
+
+## Continuar el curso
+
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 01 — Modelo mental de React](../unidad01-modelo-mental/README.md)

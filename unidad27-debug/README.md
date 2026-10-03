@@ -1,5 +1,7 @@
 # Unidad 27 — React DevTools y depuración
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Investigar renders, props, estado y efectos antes de añadir optimizaciones o modificar dependencias a ciegas.
 
@@ -112,3 +114,12 @@ Explica un re-render inesperado con evidencia y corrígelo solo si tiene impacto
 - [ ] Optimizo después.
 
 Continúa con rendimiento.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 26 — Errores y Error Boundaries](../unidad26-errores/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 28 — Re-renderizados y rendimiento](../unidad28-rendimiento/README.md)

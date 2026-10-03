@@ -1,5 +1,7 @@
 # Unidad 11 — Estado derivado y lifting state up
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Mantener una sola fuente de verdad, derivar valores y elevar estado al ancestro común cuando componentes necesitan coordinarse.
 
@@ -116,3 +118,12 @@ Filtro + lista + contador sin estado duplicado ni efecto de sincronización.
 - [ ] Evito sincronización artificial.
 
 Continúa con efectos.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 10 — Formularios en React](../unidad10-formularios/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 12 — Render, eventos y efectos](../unidad12-efectos/README.md)

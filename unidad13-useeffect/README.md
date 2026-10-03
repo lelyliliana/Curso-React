@@ -1,5 +1,7 @@
 # Unidad 13 — useEffect, dependencias y cleanup
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Escribir efectos que se sincronizan correctamente con valores reactivos y limpiar recursos obsoletos.
 
@@ -119,3 +121,12 @@ Suscripción que cambia de canal sin dejar conexiones antiguas.
 - [ ] Efectos mínimos.
 
 Continúa con datos remotos.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 12 — Render, eventos y efectos](../unidad12-efectos/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 14 — Datos remotos en React](../unidad14-datos-remotos/README.md)

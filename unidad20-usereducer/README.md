@@ -1,5 +1,7 @@
 # Unidad 20 — useReducer y transiciones de estado
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Modelar transiciones relacionadas mediante acciones y mantener reducers puros.
 
@@ -127,3 +129,12 @@ Carrito con reducer probado sin renderizar React.
 - [ ] Estado inmutable.
 
 Continúa con estado de aplicación.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 19 — Context](../unidad19-context/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 21 — Diseñar el estado de una aplicación](../unidad21-estado-app/README.md)

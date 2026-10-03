@@ -1,5 +1,7 @@
 # Unidad 06 — Eventos en React
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Responder a interacciones pasando handlers y comportamiento sin ejecutar efectos durante render.
 
@@ -111,3 +113,12 @@ Barra de acciones semánticas con callbacks recibidos por props.
 - [ ] Evento en el lugar correcto.
 
 Continúa con estado.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 05 — Composición](../unidad05-composicion/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 07 — Estado con useState](../unidad07-usestate/README.md)

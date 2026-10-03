@@ -1,5 +1,7 @@
 # Unidad 29 — memo, useMemo y useCallback
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Aplicar memoización cuando evita trabajo medido y comprender su costo/limitaciones.
 
@@ -110,3 +112,12 @@ Demuestra con Profiler un caso donde memo ayuda y otro donde no aporta.
 - [ ] Comparación antes/después.
 
 Continúa con arquitectura.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 28 — Re-renderizados y rendimiento](../unidad28-rendimiento/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 30 — Arquitectura por features](../unidad30-arquitectura/README.md)

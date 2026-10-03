@@ -1,5 +1,7 @@
 # Unidad 08 — Renderizado condicional
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Representar estados de interfaz con if, ternarios y operadores lógicos sin esconder diferencias semánticas.
 
@@ -125,3 +127,12 @@ Panel de acceso con estados claros y sin condiciones ambiguas.
 - [ ] Seguridad no depende de UI.
 
 Continúa con listas.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 07 — Estado con useState](../unidad07-usestate/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 09 — Listas, keys e identidad](../unidad09-listas-keys/README.md)

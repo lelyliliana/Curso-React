@@ -1,5 +1,7 @@
 # Unidad 14 — Datos remotos en React
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Consumir APIs sin mezclar transporte, estado y render, y comprender cuándo un effect es una solución razonable.
 
@@ -127,3 +129,12 @@ Carga remota con cliente separado y explicación de cuándo migrarías a una sol
 - [ ] Evito waterfalls obvias.
 
 Continúa con estados remotos.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 13 — useEffect, dependencias y cleanup](../unidad13-useeffect/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 15 — Loading, error, empty y datos remotos](../unidad15-estados-remotos/README.md)

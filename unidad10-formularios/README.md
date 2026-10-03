@@ -1,5 +1,7 @@
 # Unidad 10 — Formularios en React
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Diseñar formularios controlados/no controlados, validar sin duplicar innecesariamente HTML y mantener accesibilidad.
 
@@ -128,3 +130,12 @@ Formulario accesible con 0 válido, validación y errores asociados.
 - [ ] Conversión explícita.
 
 Continúa con estado compartido.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 09 — Listas, keys e identidad](../unidad09-listas-keys/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 11 — Estado derivado y lifting state up](../unidad11-estado-compartido/README.md)

@@ -1,5 +1,7 @@
 # Unidad 16 — Cancelación, cleanup y carreras de red
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Evitar que una respuesta antigua actualice estado nuevo y cancelar trabajo que dejó de ser relevante.
 
@@ -105,3 +107,12 @@ Buscador sin resultados obsoletos bajo latencias invertidas.
 - [ ] Sin error falso por abort.
 
 Continúa con custom hooks.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 15 — Loading, error, empty y datos remotos](../unidad15-estados-remotos/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 17 — Custom hooks](../unidad17-custom-hooks/README.md)

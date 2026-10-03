@@ -1,5 +1,7 @@
 # Unidad 01 — Modelo mental de React
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Comprender render declarativo, árbol de componentes, pureza del render y diferencia entre calcular UI y modificar el DOM.
 
@@ -125,3 +127,12 @@ Describe una interfaz como función de props/estado sin escribir efectos.
 - [ ] Distingo render/commit.
 
 Continúa con JSX.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 00 — Entorno y primer proyecto React](../unidad00-entorno/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 02 — JSX](../unidad02-jsx/README.md)

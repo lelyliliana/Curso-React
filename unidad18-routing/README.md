@@ -1,5 +1,7 @@
 # Unidad 18 — Routing y URL como estado
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Relacionar URL con vistas, parámetros y navegación, preservando enlaces compartibles y semántica web.
 
@@ -116,3 +118,12 @@ Catálogo con detalle, filtros en URL y página no encontrada.
 - [ ] Navegación accesible.
 
 Continúa con Context.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 17 — Custom hooks](../unidad17-custom-hooks/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 19 — Context](../unidad19-context/README.md)

@@ -1,5 +1,7 @@
 # Unidad 23 — Accesibilidad en React
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Preservar semántica HTML y gestionar foco/estado cuando la interfaz cambia dinámicamente.
 
@@ -119,3 +121,12 @@ Flujo accesible abrir dialog→interactuar→cerrar→retornar foco.
 - [ ] Prueba teclado.
 
 Continúa con pruebas.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 22 — Persistencia local en React](../unidad22-persistencia/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 24 — Pruebas de componentes](../unidad24-pruebas/README.md)

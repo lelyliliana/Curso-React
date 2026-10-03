@@ -1,5 +1,7 @@
 # Unidad 30 — Arquitectura por features
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Organizar una aplicación por funcionalidades y definir dependencias sin imponer una plantilla universal.
 
@@ -100,3 +102,12 @@ Arquitectura por features con diagrama de dependencias.
 - [ ] Shared real.
 
 Continúa con configuración.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 29 — memo, useMemo y useCallback](../unidad29-memoizacion/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 31 — Configuración y variables de entorno](../unidad31-configuracion/README.md)

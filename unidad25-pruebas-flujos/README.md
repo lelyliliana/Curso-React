@@ -1,5 +1,7 @@
 # Unidad 25 — Pruebas de flujos asíncronos
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Probar secuencias loading→resultado/error→retry sin depender de Internet ni de tiempos arbitrarios.
 
@@ -104,3 +106,12 @@ Suite completa de buscador remoto con retry y respuesta obsoleta.
 - [ ] Carrera si aplica.
 
 Continúa con errores.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 24 — Pruebas de componentes](../unidad24-pruebas/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 26 — Errores y Error Boundaries](../unidad26-errores/README.md)

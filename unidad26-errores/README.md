@@ -1,5 +1,7 @@
 # Unidad 26 — Errores y Error Boundaries
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Distinguir errores de render, eventos y asincronía y aislar fallos de subárboles.
 
@@ -101,3 +103,12 @@ Dashboard con boundary por widget y fallback recuperable.
 - [ ] Manejo eventos aparte.
 
 Continúa con debugging.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 25 — Pruebas de flujos asíncronos](../unidad25-pruebas-flujos/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 27 — React DevTools y depuración](../unidad27-debug/README.md)

@@ -1,5 +1,7 @@
 # Unidad 34 — Proyecto final
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Propósito
 
 Construir y publicar una aplicación React accesible, modular, comprobable y con un modelo de estado justificable.
@@ -231,3 +233,13 @@ Pregunta:
 # Cierre
 
 > React no consiste en acumular hooks. Consiste en modelar una interfaz como función de datos y estado, mantener efectos bajo control y conservar la semántica de la Web mientras la aplicación crece.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 33 — Taller integrador React](../unidad33-taller/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+
+Llegaste a la última unidad. Revisa tu proyecto y la lista de comprobación antes de dar por terminado el curso.

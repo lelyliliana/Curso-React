@@ -1,5 +1,7 @@
 # Unidad 12 — Render, eventos y efectos
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Decidir si una operación pertenece al render, a un handler o a un efecto de sincronización.
 
@@ -113,3 +115,12 @@ Refactoriza un componente con tres efectos innecesarios y deja solo sincronizaci
 - [ ] Cleanup reversible.
 
 Continúa con useEffect.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 11 — Estado derivado y lifting state up](../unidad11-estado-compartido/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 13 — useEffect, dependencias y cleanup](../unidad13-useeffect/README.md)

@@ -1,5 +1,7 @@
 # Unidad 05 — Composición
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Crear componentes flexibles mediante children y regiones explícitas sin construir jerarquías innecesarias.
 
@@ -108,3 +110,12 @@ Card/Panel reutilizable por composición con API documentada.
 - [ ] Estado en dueño correcto.
 
 Continúa con eventos.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 04 — Props y flujo de datos](../unidad04-props/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 06 — Eventos en React](../unidad06-eventos/README.md)

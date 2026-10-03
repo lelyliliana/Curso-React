@@ -1,5 +1,7 @@
 # Unidad 21 — Diseñar el estado de una aplicación
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Clasificar estado por naturaleza y asignarlo al propietario adecuado antes de elegir una librería.
 
@@ -91,3 +93,12 @@ Mapa de estado completo con justificación de cada propietario.
 - [ ] Herramienta después del problema.
 
 Continúa con persistencia.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 20 — useReducer y transiciones de estado](../unidad20-usereducer/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 22 — Persistencia local en React](../unidad22-persistencia/README.md)

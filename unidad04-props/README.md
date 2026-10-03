@@ -1,5 +1,7 @@
 # Unidad 04 — Props y flujo de datos
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Pasar datos/comportamiento de padre a hijo y tratar props como entradas inmutables.
 
@@ -117,3 +119,12 @@ Componente configurable con variantes y acción sin duplicar markup.
 - [ ] Sin mutación.
 
 Continúa con composición.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 03 — Componentes](../unidad03-componentes/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 05 — Composición](../unidad05-composicion/README.md)

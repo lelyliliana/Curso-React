@@ -1,5 +1,7 @@
 # Unidad 31 — Configuración y variables de entorno
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Separar configuración pública del código y comprender que todo valor incorporado al frontend puede ser visible.
 
@@ -92,3 +94,12 @@ Configuración validada sin secretos y con archivo example.
 - [ ] Sin secretos.
 
 Continúa con build.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 30 — Arquitectura por features](../unidad30-arquitectura/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 32 — Build y publicación de una SPA](../unidad32-build/README.md)

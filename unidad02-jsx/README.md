@@ -1,5 +1,7 @@
 # Unidad 02 — JSX
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Expresar estructura de interfaz con JSX, insertar expresiones y distinguir datos renderizados de HTML inyectado.
 
@@ -125,3 +127,12 @@ Convierte una sección HTML/CSS del curso anterior a JSX sin perder semántica/a
 - [ ] Renderizo datos de forma segura.
 
 Continúa con componentes.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 01 — Modelo mental de React](../unidad01-modelo-mental/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 03 — Componentes](../unidad03-componentes/README.md)

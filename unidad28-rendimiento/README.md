@@ -1,5 +1,7 @@
 # Unidad 28 — Re-renderizados y rendimiento
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Optimizar desde evidencia, colocar estado cerca de quien lo usa y distinguir render costoso de render frecuente.
 
@@ -103,3 +105,12 @@ Informe de una interacción lenta con perfil antes/después.
 - [ ] Comparo evidencia.
 
 Continúa con memoización.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 27 — React DevTools y depuración](../unidad27-debug/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 29 — memo, useMemo y useCallback](../unidad29-memoizacion/README.md)

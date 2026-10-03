@@ -1,5 +1,7 @@
 # Unidad 07 — Estado con useState
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Modelar memoria del componente, comprender snapshots y actualizar objetos/arrays sin mutarlos.
 
@@ -132,3 +134,12 @@ Carrito con actualizaciones inmutables y total calculado.
 - [ ] Derivo lo calculable.
 
 Continúa con render condicional.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 06 — Eventos en React](../unidad06-eventos/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 08 — Renderizado condicional](../unidad08-condicional/README.md)

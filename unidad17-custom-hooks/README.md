@@ -1,5 +1,7 @@
 # Unidad 17 — Custom hooks
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Extraer lógica reactiva reutilizable sin esconder prematuramente el comportamiento de la aplicación.
 
@@ -107,3 +109,12 @@ Custom hook de dominio con API pequeña y cancelación correcta.
 - [ ] Sin abstracción prematura.
 
 Continúa con routing.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 16 — Cancelación, cleanup y carreras de red](../unidad16-cancelacion/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 18 — Routing y URL como estado](../unidad18-routing/README.md)

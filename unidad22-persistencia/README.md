@@ -1,5 +1,7 @@
 # Unidad 22 — Persistencia local en React
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Inicializar y sincronizar preferencias o borradores sin duplicar estado innecesariamente.
 
@@ -106,3 +108,12 @@ Preferencias versionadas con recuperación segura ante corrupción.
 - [ ] Manejo fallos/versiones.
 
 Continúa con accesibilidad.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 21 — Diseñar el estado de una aplicación](../unidad21-estado-app/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 23 — Accesibilidad en React](../unidad23-accesibilidad/README.md)

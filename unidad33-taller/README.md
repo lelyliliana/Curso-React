@@ -1,5 +1,7 @@
 # Unidad 33 — Taller integrador React
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Propósito
 
 Resolver interfaces sin que el enunciado indique qué hook utilizar.
@@ -136,3 +138,12 @@ Entrega:
 - [ ] Rendimiento con evidencia.
 
 Continúa con proyecto final.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 32 — Build y publicación de una SPA](../unidad32-build/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 34 — Proyecto final](../unidad34-proyecto-final/README.md)

@@ -1,5 +1,7 @@
 # Unidad 03 — Componentes
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Descomponer una interfaz por responsabilidades y mantener componentes predecibles.
 
@@ -108,3 +110,12 @@ Descompón una landing en componentes coherentes y justifica por qué no extraes
 - [ ] HTML semántico.
 
 Continúa con props.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 02 — JSX](../unidad02-jsx/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 04 — Props y flujo de datos](../unidad04-props/README.md)

@@ -1,5 +1,7 @@
 # Unidad 09 — Listas, keys e identidad
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Renderizar colecciones y usar keys para que React conserve correctamente identidad y estado entre renders.
 
@@ -112,3 +114,12 @@ Lista editable/ordenable con IDs estables y estado correcto tras reordenar.
 - [ ] Datos derivados.
 
 Continúa con formularios.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 08 — Renderizado condicional](../unidad08-condicional/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 10 — Formularios en React](../unidad10-formularios/README.md)

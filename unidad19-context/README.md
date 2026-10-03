@@ -1,5 +1,7 @@
 # Unidad 19 — Context
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Compartir valores a través de un subárbol sin prop drilling excesivo y comprender el costo de actualizaciones.
 
@@ -120,3 +122,12 @@ Tema compartido con provider pequeño y persistencia separada.
 - [ ] Sin optimización prematura.
 
 Continúa con reducer.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 18 — Routing y URL como estado](../unidad18-routing/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 20 — useReducer y transiciones de estado](../unidad20-usereducer/README.md)

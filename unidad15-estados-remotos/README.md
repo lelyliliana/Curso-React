@@ -1,5 +1,7 @@
 # Unidad 15 — Loading, error, empty y datos remotos
 
+[Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
+
 ## Qué aprenderás
 Modelar estados remotos explícitos y evitar interfaces ambiguas o spinners infinitos.
 
@@ -103,3 +105,12 @@ Componente remoto que pueda mostrar todos sus estados sin hacer fetch real.
 - [ ] Accesibilidad.
 
 Continúa con cancelación.
+
+
+---
+
+## Continuar el curso
+
+- **Unidad anterior:** [Unidad 14 — Datos remotos en React](../unidad14-datos-remotos/README.md)
+- **Volver al índice:** [Todas las unidades](../README.md)
+- **Siguiente unidad:** [Unidad 16 — Cancelación, cleanup y carreras de red](../unidad16-cancelacion/README.md)
