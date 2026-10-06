@@ -1,29 +1,11 @@
-# Versión 1.0
+# Versión 1.1
 
-Estado: **completa, autodidacta y disponible**.
+35 unidades conservadas en su orden. Las unidades 00 a 32 tienen laboratorios ejecutables en una galería común; todas incluyen práctica y solución razonada. Taller y proyecto final desarrollan reglas, estado, efectos, acceso, red, pruebas y publicación.
 
-## Alcance
-- 35 unidades en siete niveles;
-- JSX, componentes, props y composición;
-- eventos, estado, listas y formularios;
-- efectos y datos remotos;
-- cancelación y custom hooks;
-- routing, Context y useReducer;
-- accesibilidad;
-- pruebas;
-- errores y depuración;
-- rendimiento y memoización;
-- arquitectura y configuración;
-- build/publicación;
-- app de referencia;
-- taller;
-- proyecto final con rúbrica y checklist.
+El entorno fija React/React DOM 19.3.0, React Router 8.4.0, Vite 8.3.3 y herramientas de desarrollo mediante package.json y package-lock.json. La guía utiliza Node 24 LTS desde 24.15.0 por requisitos del conjunto de herramientas y contempla Ubuntu, Windows y macOS.
 
-## Criterio de cierre
-El curso cubre React desde su modelo mental hasta una aplicación publicada y probada.
+El proyecto integra tareas locales y catálogo con respuestas de API controladas. El guardado es del navegador/origen, falible y sin sincronización remota. Publicar dist no publica la API del proceso Vite. La extensión de formularios muestra acciones de React 19; el modelo controlado permanece como base.
 
-HTML/CSS y JavaScript permanecen como cursos independientes.
+Las pruebas verifican contratos concretos; no certifican ausencia de errores ni accesibilidad completa. React Compiler y Server Components no se activan en este proyecto.
 
-## Experiencia de aprendizaje
-
-El curso puede recorrerse de forma autónoma desde el modelo mental de React, JSX, componentes y estado hasta efectos, routing, datos remotos, accesibilidad, pruebas, rendimiento, arquitectura y publicación. Las unidades priorizan render puro, estado mínimo, efectos justificados, diagnóstico con React DevTools y decisiones basadas en evidencia.
+[Índice](README.md) · [Entorno](docs/ENTORNO.md) · [Verificación](docs/VERIFICACION.md)

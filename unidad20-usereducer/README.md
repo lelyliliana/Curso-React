@@ -1,13 +1,14 @@
-# Unidad 20 — useReducer y transiciones de estado
+# Unidad 20: useReducer y transiciones de estado
 
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
 Modelar transiciones relacionadas mediante acciones y mantener reducers puros.
 
-# 1. Cuándo aporta
+## 1. Cuándo aporta
 
 useReducer puede ayudar cuando:
+
 - muchas actualizaciones afectan el mismo estado;
 - transiciones tienen nombres de dominio;
 - quieres centralizar reglas;
@@ -15,14 +16,14 @@ useReducer puede ayudar cuando:
 
 No es “useState avanzado obligatorio”.
 
-# 2. Forma
+## 2. Forma
 
 ```jsx
 const [state, dispatch] =
   useReducer(reducer, initialState);
 ```
 
-# 3. Reducer
+## 3. Reducer
 
 ```js
 function reducer(state, action) {
@@ -40,9 +41,10 @@ function reducer(state, action) {
 
 Recibe estado/acción y devuelve siguiente estado.
 
-# 4. Pureza
+## 4. Pureza
 
 Reducer no debe:
+
 - fetch;
 - escribir storage;
 - cambiar DOM;
@@ -51,7 +53,7 @@ Reducer no debe:
 
 Puede calcular el siguiente estado.
 
-# 5. Acción
+## 5. Acción
 
 Una acción describe qué ocurrió/intención:
 
@@ -65,38 +67,41 @@ dispatch({
 
 Evita acciones genéricas tipo `SET_EVERYTHING` si destruyen el valor del modelo.
 
-# 6. Mutación
+## 6. Mutación
 
 Incorrecto:
 
 ```js
-state.items.push(item);
-return state;
+function reducerIncorrecto(state, action) {
+  state.items.push(action.item);
+  return state;
+}
 ```
 
 Devuelve estructuras nuevas para las partes modificadas.
 
-# 7. Estado imposible
+## 7. Estado imposible
 
 Reducer puede imponer transiciones válidas.
 
 Ejemplo: un flujo remoto con status puede rechazar acciones incoherentes o modelarlas explícitamente.
 
-# 8. Inicialización
+## 8. Inicialización
 
 useReducer admite inicialización lazy para construir estado inicial costoso/derivado de una entrada.
 
 No mezcles persistencia con reducer puro; lee afuera/inicializador y sincroniza aparte.
 
-# 9. Reducer + Context
+## 9. Reducer + Context
 
 Pueden combinarse para compartir state/dispatch.
 
 No significa que toda aplicación necesite esta pareja.
 
-# 10. Práctica guiada
+## 10. Práctica guiada
 
 Carrito:
+
 - item/added;
 - item/removed;
 - quantity/changed;
@@ -104,17 +109,19 @@ Carrito:
 
 Prueba reducer como función JavaScript pura.
 
-# 11. Errores frecuentes
+## 11. Errores frecuentes
+
 - reducer con fetch;
 - mutar state;
 - acción sin significado;
 - useReducer para contador trivial;
 - reducer+Context por moda.
 
-# 12. Reto
+## 12. Reto
 Carrito con reducer probado sin renderizar React.
 
-# 13. Autoevaluación
+## 13. Autoevaluación
+
 1. ¿Cuándo useReducer?
 2. ¿Reducer puede hacer fetch?
 3. ¿Muta state?
@@ -122,7 +129,8 @@ Carrito con reducer probado sin renderizar React.
 5. ¿Reducer se puede probar solo?
 6. ¿Context obligatorio?
 
-# 14. Checklist
+## 14. Checklist
+
 - [ ] Transiciones claras.
 - [ ] Reducer puro.
 - [ ] Acciones de dominio.
@@ -130,11 +138,74 @@ Carrito con reducer probado sin renderizar React.
 
 Continúa con estado de aplicación.
 
+## Laboratorio desarrollado: Reducer y acciones
+
+### Modelo, contrato y decisiones
+
+El reducer recibe estado anterior y una acción y calcula un estado siguiente sin DOM, red ni almacenamiento. Para cada entrada válida, el resultado debe ser reproducible. dispatch no cambia inmediatamente la variable cantidad del handler actual. La acción expresa intención; el componente no tiene que reproducir cada paso de la transición. En el proyecto las reglas de tareas se componen en un reducer que informa fallos sin perder datos ni incrementar una revisión válida.
+
+Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
+
+### Preparar y abrir
+
+Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/20. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
+
+No hace falta un proyecto npm distinto por unidad. El [índice de laboratorios](../src/App.jsx) carga este componente y conserva la navegación. Los estilos y la entrada comunes están en src. Si lo copias a otro proyecto, conserva los imports que use y el contexto de router cuando corresponda; un fragmento aislado no incluye automáticamente esas dependencias.
+
+### Resultado esperado
+
+restar desde 0 mantiene 0; sumar y reiniciar cambian el número.
+
+### Implementación completa del componente
+
+```jsx
+import { useReducer } from "react";
+export function reducer(cantidad, accion) {
+  switch (accion.type) {
+    case "sumar":
+      return cantidad + 1;
+    case "restar":
+      return Math.max(0, cantidad - 1);
+    case "reiniciar":
+      return 0;
+    default:
+      throw new Error("Acción desconocida");
+  }
+}
+export default function App() {
+  const [cantidad, dispatch] = useReducer(reducer, 0);
+  return (
+    <section>
+      <h2>Acciones y transición pura</h2>
+      <p role="status">Cantidad: {cantidad}</p>
+      {["sumar", "restar", "reiniciar"].map((type) => (
+        <button key={type} type="button" onClick={() => dispatch({ type })}>
+          {type}
+        </button>
+      ))}
+    </section>
+  );
+}
+```
+
+Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
+
+### Experimentar y comprobar
+
+Añade sumarDos al reducer y comprueba los límites en una prueba pura. Llama dos veces al reducer con la misma entrada y compara resultados.
+
+**Casos que debes registrar:** 0; sumar; sumarDos; reiniciar; acción desconocida; dos invocaciones iguales.
+
+Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
+
+### Actividad y solución
+
+Realiza [PRACTICA.md](PRACTICA.md) y consulta después [SOLUCIONES.md](SOLUCIONES.md). La solución explica qué decisión conserva el contrato; no exige copiar exactamente los mismos nombres. Cuando haya controles, recórrelos también con teclado y verifica que un error no elimine la posibilidad de corregirlo.
 
 ---
 
 ## Continuar el curso
 
-- **Unidad anterior:** [Unidad 19 — Context](../unidad19-context/README.md)
+- **Unidad anterior:** [Unidad 19: Context](../unidad19-context/README.md)
 - **Volver al índice:** [Todas las unidades](../README.md)
-- **Siguiente unidad:** [Unidad 21 — Diseñar el estado de una aplicación](../unidad21-estado-app/README.md)
+- **Siguiente unidad:** [Unidad 21: Diseñar el estado de una aplicación](../unidad21-estado-app/README.md)

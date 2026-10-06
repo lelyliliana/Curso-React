@@ -1,0 +1,177 @@
+[
+  {
+    "id": "00",
+    "carpeta": "unidad00-entorno",
+    "titulo": "Unidad 00: Entorno y primer proyecto React"
+  },
+  {
+    "id": "01",
+    "carpeta": "unidad01-modelo-mental",
+    "titulo": "Unidad 01: Modelo mental de React"
+  },
+  {
+    "id": "02",
+    "carpeta": "unidad02-jsx",
+    "titulo": "Unidad 02: JSX"
+  },
+  {
+    "id": "03",
+    "carpeta": "unidad03-componentes",
+    "titulo": "Unidad 03: Componentes"
+  },
+  {
+    "id": "04",
+    "carpeta": "unidad04-props",
+    "titulo": "Unidad 04: Props y flujo de datos"
+  },
+  {
+    "id": "05",
+    "carpeta": "unidad05-composicion",
+    "titulo": "Unidad 05: Composición"
+  },
+  {
+    "id": "06",
+    "carpeta": "unidad06-eventos",
+    "titulo": "Unidad 06: Eventos en React"
+  },
+  {
+    "id": "07",
+    "carpeta": "unidad07-usestate",
+    "titulo": "Unidad 07: Estado con useState"
+  },
+  {
+    "id": "08",
+    "carpeta": "unidad08-condicional",
+    "titulo": "Unidad 08: Renderizado condicional"
+  },
+  {
+    "id": "09",
+    "carpeta": "unidad09-listas-keys",
+    "titulo": "Unidad 09: Listas, keys e identidad"
+  },
+  {
+    "id": "10",
+    "carpeta": "unidad10-formularios",
+    "titulo": "Unidad 10: Formularios en React"
+  },
+  {
+    "id": "11",
+    "carpeta": "unidad11-estado-compartido",
+    "titulo": "Unidad 11: Estado derivado y lifting state up"
+  },
+  {
+    "id": "12",
+    "carpeta": "unidad12-efectos",
+    "titulo": "Unidad 12: Render, eventos y efectos"
+  },
+  {
+    "id": "13",
+    "carpeta": "unidad13-useeffect",
+    "titulo": "Unidad 13: useEffect, dependencias y cleanup"
+  },
+  {
+    "id": "14",
+    "carpeta": "unidad14-datos-remotos",
+    "titulo": "Unidad 14: Datos remotos en React"
+  },
+  {
+    "id": "15",
+    "carpeta": "unidad15-estados-remotos",
+    "titulo": "Unidad 15: Loading, error, empty y datos remotos"
+  },
+  {
+    "id": "16",
+    "carpeta": "unidad16-cancelacion",
+    "titulo": "Unidad 16: Cancelación, cleanup y carreras de red"
+  },
+  {
+    "id": "17",
+    "carpeta": "unidad17-custom-hooks",
+    "titulo": "Unidad 17: Custom hooks"
+  },
+  {
+    "id": "18",
+    "carpeta": "unidad18-routing",
+    "titulo": "Unidad 18: Routing y URL como estado"
+  },
+  {
+    "id": "19",
+    "carpeta": "unidad19-context",
+    "titulo": "Unidad 19: Context"
+  },
+  {
+    "id": "20",
+    "carpeta": "unidad20-usereducer",
+    "titulo": "Unidad 20: useReducer y transiciones de estado"
+  },
+  {
+    "id": "21",
+    "carpeta": "unidad21-estado-app",
+    "titulo": "Unidad 21: Diseñar el estado de una aplicación"
+  },
+  {
+    "id": "22",
+    "carpeta": "unidad22-persistencia",
+    "titulo": "Unidad 22: Persistencia local en React"
+  },
+  {
+    "id": "23",
+    "carpeta": "unidad23-accesibilidad",
+    "titulo": "Unidad 23: Accesibilidad en React"
+  },
+  {
+    "id": "24",
+    "carpeta": "unidad24-pruebas",
+    "titulo": "Unidad 24: Pruebas de componentes"
+  },
+  {
+    "id": "25",
+    "carpeta": "unidad25-pruebas-flujos",
+    "titulo": "Unidad 25: Pruebas de flujos asíncronos"
+  },
+  {
+    "id": "26",
+    "carpeta": "unidad26-errores",
+    "titulo": "Unidad 26: Errores y Error Boundaries"
+  },
+  {
+    "id": "27",
+    "carpeta": "unidad27-debug",
+    "titulo": "Unidad 27: React DevTools y depuración"
+  },
+  {
+    "id": "28",
+    "carpeta": "unidad28-rendimiento",
+    "titulo": "Unidad 28: Re-renderizados y rendimiento"
+  },
+  {
+    "id": "29",
+    "carpeta": "unidad29-memoizacion",
+    "titulo": "Unidad 29: memo, useMemo y useCallback"
+  },
+  {
+    "id": "30",
+    "carpeta": "unidad30-arquitectura",
+    "titulo": "Unidad 30: Arquitectura por features"
+  },
+  {
+    "id": "31",
+    "carpeta": "unidad31-configuracion",
+    "titulo": "Unidad 31: Configuración y variables de entorno"
+  },
+  {
+    "id": "32",
+    "carpeta": "unidad32-build",
+    "titulo": "Unidad 32: Build y publicación de una SPA"
+  },
+  {
+    "id": "33",
+    "carpeta": "unidad33-taller",
+    "titulo": "Unidad 33: Taller integrador React"
+  },
+  {
+    "id": "34",
+    "carpeta": "unidad34-proyecto-final",
+    "titulo": "Unidad 34: Proyecto final"
+  }
+]

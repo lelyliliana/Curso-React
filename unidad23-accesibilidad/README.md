@@ -1,11 +1,11 @@
-# Unidad 23 — Accesibilidad en React
+# Unidad 23: Accesibilidad en React
 
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
 Preservar semántica HTML y gestionar foco/estado cuando la interfaz cambia dinámicamente.
 
-# 1. React no cambia HTML
+## 1. React no cambia HTML
 
 Acción:
 
@@ -17,31 +17,34 @@ Navegación: enlace.
 
 No uses div onClick y luego intentes reconstruir teclado/roles con ARIA.
 
-# 2. Labels
+## 2. Labels
 
 ```jsx
-<label htmlFor="email">Correo</label>
-<input id="email" />
+<>
+  <label htmlFor="email">Correo</label>
+  <input id="email" />
+</>
 ```
 
 Los fundamentos del curso HTML/CSS siguen vigentes.
 
-# 3. IDs
+## 3. IDs
 
 Para componentes reutilizables, `useId` puede generar IDs estables para relaciones de accesibilidad como label/control/descripciones.
 
 No uses useId como key de listas de datos; las keys deben venir de la identidad del dato.
 
-# 4. Foco
+## 4. Foco
 
 Muévelo cuando el flujo lo requiere:
+
 - abrir/cerrar dialog;
 - error de envío complejo;
 - navegación SPA en ciertos diseños.
 
 No llames focus después de cada render.
 
-# 5. Refs
+## 5. Refs
 
 ```jsx
 const inputRef = useRef(null);
@@ -52,7 +55,7 @@ Ref permite acceso imperativo cuando realmente necesitas interactuar con DOM/sis
 
 No guardes en ref datos que deberían provocar render.
 
-# 6. Mensajes dinámicos
+## 6. Mensajes dinámicos
 
 `role="status"` / regiones live pueden anunciar actualizaciones no enfocadas.
 
@@ -60,9 +63,10 @@ No guardes en ref datos que deberían provocar render.
 
 No hagas toda la aplicación live.
 
-# 7. Dialog
+## 7. Dialog
 
 Un modal requiere:
+
 - nombre;
 - foco inicial;
 - cierre;
@@ -72,21 +76,22 @@ Un modal requiere:
 
 Usa componentes/librerías accesibles o APIs nativas apropiadas cuando el problema lo justifique; no improvises solo CSS.
 
-# 8. Routing
+## 8. Routing
 
 Tras navegación SPA, el usuario de lector de pantalla puede necesitar contexto del cambio.
 
 Actualiza título y considera gestión de foco/heading según aplicación.
 
-# 9. Loading
+## 9. Loading
 
 Skeleton/spinner debe tener alternativa textual cuando sea necesario.
 
 No anuncies cada cambio de porcentaje si genera ruido.
 
-# 10. Práctica guiada
+## 10. Práctica guiada
 
 Implementa formulario + dialog y prueba:
+
 - Tab/Shift+Tab;
 - Enter/Escape;
 - foco inicial/retorno;
@@ -94,7 +99,8 @@ Implementa formulario + dialog y prueba:
 - errores;
 - anuncios.
 
-# 11. Errores frecuentes
+## 11. Errores frecuentes
+
 - div button;
 - useId como key;
 - focus en cada render;
@@ -102,10 +108,11 @@ Implementa formulario + dialog y prueba:
 - aria-live global;
 - modal solo visual.
 
-# 12. Reto
+## 12. Reto
 Flujo accesible abrir dialog→interactuar→cerrar→retornar foco.
 
-# 13. Autoevaluación
+## 13. Autoevaluación
+
 1. ¿React reemplaza semántica?
 2. ¿useId para key?
 3. ¿Cuándo ref?
@@ -113,7 +120,8 @@ Flujo accesible abrir dialog→interactuar→cerrar→retornar foco.
 5. ¿Qué necesita dialog?
 6. ¿Navegación SPA puede necesitar foco?
 
-# 14. Checklist
+## 14. Checklist
+
 - [ ] HTML nativo.
 - [ ] Foco intencional.
 - [ ] IDs correctos.
@@ -122,11 +130,84 @@ Flujo accesible abrir dialog→interactuar→cerrar→retornar foco.
 
 Continúa con pruebas.
 
+## Laboratorio desarrollado: Accesibilidad como comportamiento
+
+### Modelo, contrato y decisiones
+
+Los controles son botones nativos con nombres visibles. Agregar mantiene foco en el botón y la región status comunica cantidad. Limpiar elimina recursos y mueve foco a Agregar, un destino que sigue existiendo. Los ids de recursos son identidad de la lista, no un historial global. No pongas aria-live en toda la aplicación: los anuncios deben comunicar cambios relevantes sin repetir contenido completo ni disputar el foco con otras regiones.
+
+Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
+
+### Preparar y abrir
+
+Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/23. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
+
+No hace falta un proyecto npm distinto por unidad. El [índice de laboratorios](../src/App.jsx) carga este componente y conserva la navegación. Los estilos y la entrada comunes están en src. Si lo copias a otro proyecto, conserva los imports que use y el contexto de router cuando corresponda; un fragmento aislado no incluye automáticamente esas dependencias.
+
+### Resultado esperado
+
+Agregar anuncia cantidad; Limpiar deja 0 y enfoca Agregar.
+
+### Implementación completa del componente
+
+```jsx
+import { useRef, useState } from "react";
+export default function App() {
+  const [recursos, setRecursos] = useState([]);
+  const agregar = useRef(null);
+  return (
+    <section>
+      <h2>Anuncios y foco estable</h2>
+      <button
+        ref={agregar}
+        type="button"
+        onClick={() =>
+          setRecursos((r) => [
+            ...r,
+            { id: r.length + 1, titulo: `Recurso ${r.length + 1}` },
+          ])
+        }
+      >
+        Agregar recurso
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          setRecursos([]);
+          agregar.current?.focus();
+        }}
+      >
+        Limpiar recursos
+      </button>
+      <p role="status">{recursos.length} recursos disponibles.</p>
+      <ul>
+        {recursos.map((r) => (
+          <li key={r.id}>{r.titulo}</li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+```
+
+Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
+
+### Experimentar y comprobar
+
+Realiza tres agregados con teclado y limpia. Añade un mensaje que comunique cantidad eliminada y verifica el foco con un lector de pantalla.
+
+**Casos que debes registrar:** Tres activaciones; anuncio; limpiar; foco válido; teclado y lector.
+
+Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
+
+### Actividad y solución
+
+Realiza [PRACTICA.md](PRACTICA.md) y consulta después [SOLUCIONES.md](SOLUCIONES.md). La solución explica qué decisión conserva el contrato; no exige copiar exactamente los mismos nombres. Cuando haya controles, recórrelos también con teclado y verifica que un error no elimine la posibilidad de corregirlo.
 
 ---
 
 ## Continuar el curso
 
-- **Unidad anterior:** [Unidad 22 — Persistencia local en React](../unidad22-persistencia/README.md)
+- **Unidad anterior:** [Unidad 22: Persistencia local en React](../unidad22-persistencia/README.md)
 - **Volver al índice:** [Todas las unidades](../README.md)
-- **Siguiente unidad:** [Unidad 24 — Pruebas de componentes](../unidad24-pruebas/README.md)
+- **Siguiente unidad:** [Unidad 24: Pruebas de componentes](../unidad24-pruebas/README.md)
