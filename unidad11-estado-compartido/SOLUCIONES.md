@@ -12,19 +12,11 @@ La implementación completa está en [App.jsx](ejemplo/App.jsx). Si importa un c
 
 El mismo setter del padre recibe 5, por lo que ambos controles muestran 5 y el total es 25. Un visor puede recibir cantidad como prop. Compartir estado no exige Context para este árbol pequeño: una relación directa padre/hijos expresa el flujo con claridad. Una copia de total en un efecto añadiría una sincronización innecesaria.
 
-## Contraste que debes poder reproducir
+## Resolución concreta de la práctica
 
-A y B; mínimo 0; máximo 10; tercer visor; total coherente.
+Añade `<p>Visor: {cantidad}</p>` dentro de App, después del total. No modifiques Campo ni introduzcas un setter nuevo. Con A en 5, ambos controles valen 5 y total vale 25. Con B en 10, ambos valen 10 y total 50. El visor es otro consumidor de la fuente única, no otra copia que debas sincronizar mediante un efecto.
 
-Compara la entrada y el resultado en la referencia antes de evaluar una variante. Identifica la primera operación que cambia el significado: el punto de conversión, una identidad, una dependencia, una transición o un efecto según el tema. Un mensaje de error distinto puede ser aceptable; presentar un fallo como éxito o perder la identidad de los datos no lo es.
-
-## Comprobación y límites
-
-Conserva casos de entrada y acciones observables. Las [pruebas del curso](../docs/VERIFICACION.md) verifican contratos concretos y rutas; no demuestran todos los programas que puedas construir a partir de ellos. Si agregas una regla nueva, incorpora un caso que falle al romperla, sin convertir cada línea de implementación en una aserción equivalente.
-
-Para los componentes con controles, compara teclado, etiqueta y foco después de cambiar estado. Para efectos o red, comprueba además limpieza y resultados que lleguen tarde. Para ejemplos puros, revisa que la entrada no se modifique accidentalmente. Justifica qué comprobación aplica al tema en lugar de repetir una lista de herramientas sin evidencia.
-
-[Volver a la práctica](PRACTICA.md)
+[Seguir el recorrido del código](DESARROLLO.md) · [Volver a la práctica](PRACTICA.md)
 
 ---
 

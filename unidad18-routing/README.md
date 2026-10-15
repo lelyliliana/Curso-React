@@ -1,5 +1,7 @@
 # Unidad 18: Routing y URL como estado
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -134,8 +136,6 @@ Continúa con Context.
 
 La galería tiene un HashRouter común. Este laboratorio declara rutas anidadas sin crear otro router. La búsqueda procede de useSearchParams y puede sobrevivir a recarga; escribir usa replace para no producir una entrada de historial por cada tecla. El detalle valida el formato de id antes de localizar el recurso. Una ruta desconocida y un id desconocido son casos distintos aunque ambos se presenten como no encontrado. HashRouter mantiene rutas tras #, de modo que el hosting recibe la ruta del documento base.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/18. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -208,15 +208,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Recarga una URL filtrada y un detalle directamente. Prueba id 99, id abc y una ruta que no exista; usa enlaces y Atrás.
 
 **Casos que debes registrar:** Filtro compartible; recarga; detalle 1; 99; abc; ruta ausente.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

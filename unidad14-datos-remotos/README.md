@@ -1,5 +1,7 @@
 # Unidad 14: Datos remotos en React
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -141,8 +143,6 @@ Continúa con estados remotos.
 
 escenario determina qué datos representa la vista. El efecto inicia una carga asociada a ese valor y su cleanup marca vigente=false y aborta. El cliente comprueba status HTTP, JSON y contrato de datos. La bandera protege el resultado local de ese setup aunque el transporte tarde en terminar; la cancelación reduce trabajo cuando es atendida. No declares async al callback directo del efecto: debe devolver una limpieza o nada, no una Promise.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/14. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -212,15 +212,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Cambia lento a normal antes de recibir respuesta. Después ensaya HTTP 500 y JSON inválido y distingue sus mensajes.
 
 **Casos que debes registrar:** normal; vacio; 500; JSON inválido; cambio rápido lento a normal.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

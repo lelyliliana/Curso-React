@@ -1,5 +1,7 @@
 # Unidad 13: useEffect, dependencias y cleanup
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -137,8 +139,6 @@ Continúa con datos remotos.
 
 Reloj crea un intervalo en el efecto y lo elimina en cleanup. El callback utiliza una función actualizadora para no capturar una cantidad obsoleta. Ocultar Reloj lo desmonta; volver a mostrarlo crea otra instancia desde 0. StrictMode permanece habilitado en la raíz: sus comprobaciones adicionales no deben dejar intervalos duplicados. Un timer no es un reloj exacto ni una garantía de que transcurrió exactamente un segundo por actualización visible.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/13. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -175,15 +175,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Oculta y muestra tres veces. Añade una duración de intervalo como prop y dependencia; al cambiarla, verifica que se limpia el intervalo anterior.
 
 **Casos que debes registrar:** Montaje; tres desmontajes; cambio de intervalo; no duplicar recursos.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

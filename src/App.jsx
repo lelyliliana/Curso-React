@@ -1,6 +1,7 @@
 import { lazy, Suspense, useLayoutEffect, useRef, useState } from "react";
 import { Link, Route, Routes, useLocation, useParams } from "react-router";
 import unidades from "./unidades.json";
+import { soluciones } from "./soluciones.js";
 import LimiteError from "../components/LimiteError.jsx";
 const Proyecto = lazy(() => import("../ejemplos/app-referencia/src/App.jsx"));
 const Lab0 = lazy(() => import("../unidad00-entorno/ejemplo/App.jsx"));
@@ -92,6 +93,20 @@ function Indice() {
     </>
   );
 }
+function ExtensionResuelta() {
+  const { id } = useParams();
+  const Componente = Object.hasOwn(soluciones, id) ? soluciones[id] : null;
+  if (!Componente) return <h1>Extensión no encontrada</h1>;
+  return (
+    <>
+      <h1>Extensión resuelta de la Unidad {id}</h1>
+      <p>
+        <Link to={`/laboratorio/${id}`}>Volver al laboratorio original</Link>
+      </p>
+      <Componente />
+    </>
+  );
+}
 function Laboratorio() {
   const { id } = useParams();
   const u = unidades.find((u) => u.id === id),
@@ -125,6 +140,11 @@ function Laboratorio() {
           <Link to="/proyecto">Taller y proyecto</Link>
         )}
       </nav>
+      {soluciones[id] && (
+        <p>
+          <Link to={`/solucion/${id}`}>Abrir extensión resuelta</Link>
+        </p>
+      )}
       <LimiteError
         key={`${id}-${revision}`}
         onReintentar={() => setRevision((n) => n + 1)}
@@ -138,8 +158,10 @@ export default function App() {
   const location = useLocation(),
     contenido = useRef(null);
   useLayoutEffect(() => {
-    const u = unidades.find((u) =>
-      location.pathname.startsWith(`/laboratorio/${u.id}`),
+    const u = unidades.find(
+      (u) =>
+        location.pathname.startsWith(`/laboratorio/${u.id}`) ||
+        location.pathname === `/solucion/${u.id}`,
     );
     document.title = u
       ? u.titulo
@@ -177,6 +199,10 @@ export default function App() {
                   key={location.pathname.split("/").slice(0, 3).join("/")}
                 />
               }
+            />
+            <Route
+              path="solucion/:id"
+              element={<ExtensionResuelta key={location.pathname} />}
             />
             <Route path="proyecto/*" element={<Proyecto />} />
             <Route path="*" element={<h1>Ruta no encontrada</h1>} />

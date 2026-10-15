@@ -1,5 +1,7 @@
 # Unidad 10: Formularios en React
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -143,8 +145,6 @@ Continúa con estado compartido.
 
 El valor del campo procede de estado y onChange actualiza ese estado. La regla acepta de 2 a 40 unidades UTF-16 después de trim; el envío válido entrega el texto normalizado al callback. useId relaciona etiqueta y mensajes sin duplicar ids cuando hay varias instancias. La validación HTML ayuda a introducir datos, pero no sustituye una regla de dominio ni una validación del servidor si existiera una operación remota.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/10. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -213,15 +213,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Renderiza dos formularios en la misma vista. Comprueba etiquetas independientes, entrada de un carácter y texto válido. Añade un callback que registre el nombre en un estado del padre.
 
 **Casos que debes registrar:** Dos instancias; vacío nativo; un carácter; espacios; Ana; máximo 40.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

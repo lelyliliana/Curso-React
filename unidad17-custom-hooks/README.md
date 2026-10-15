@@ -1,5 +1,7 @@
 # Unidad 17: Custom hooks
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -132,8 +134,6 @@ Continúa con routing.
 
 useContador contiene lógica de estado y expone cantidad, sumar y reiniciar. Dos controles que llaman el hook obtienen estados independientes. El inicio se usa al inicializar y en reiniciar, pero cambiarlo como prop no implica por sí solo que useState reinicie. Para compartir un contador entre componentes debes mover su estado a un propietario común, usar un contexto o una fuente compartida diseñada para ello. Un hook no es automáticamente un singleton ni una caché global.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/17. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -182,15 +182,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Añade restar con mínimo 0 al hook y un tercer control desde 100. Define qué debe hacer reiniciar si cambia la prop inicio.
 
 **Casos que debes registrar:** Tres instancias; 0; reiniciar; cambio de prop; estado independiente.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

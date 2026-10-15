@@ -12,19 +12,13 @@ La implementación completa está en [App.jsx](ejemplo/App.jsx). Si importa un c
 
 Una tercera instancia comienza en 0. Una key nueva indica otra identidad, por lo que el contador se vuelve a montar y reinicia su estado. Utilizar una key aleatoria en cada render produciría ese reinicio repetidamente. Para compartir el número entre los tres habría que mover el estado al propietario común y pasar valores/acciones.
 
-## Contraste que debes poder reproducir
+## Resolución concreta de la práctica
 
-Tres contadores; cambios alternados; identidad conservada; reinicio por key.
+La [extensión completa](ejemplo/Solucion.jsx) incorpora tres instancias y una key controlada por revisión. Tras cantidades 2, 1 y 0, Recrear Primero deja 0, 1 y 0. Cambiar solo el texto de la prop nombre conservaría la memoria; cambiar key la reinicia. No pongas esa revisión en el contenedor que engloba todos los contadores, porque entonces reiniciarías más instancias de las solicitadas.
 
-Compara la entrada y el resultado en la referencia antes de evaluar una variante. Identifica la primera operación que cambia el significado: el punto de conversión, una identidad, una dependencia, una transición o un efecto según el tema. Un mensaje de error distinto puede ser aceptable; presentar un fallo como éxito o perder la identidad de los datos no lo es.
+La [extensión resuelta completa](ejemplo/Solucion.jsx) se ejecuta en http://127.0.0.1:5173/#/solucion/03. Ábrela después de intentar la práctica; la referencia original sigue disponible en el enlace de regreso.
 
-## Comprobación y límites
-
-Conserva casos de entrada y acciones observables. Las [pruebas del curso](../docs/VERIFICACION.md) verifican contratos concretos y rutas; no demuestran todos los programas que puedas construir a partir de ellos. Si agregas una regla nueva, incorpora un caso que falle al romperla, sin convertir cada línea de implementación en una aserción equivalente.
-
-Para los componentes con controles, compara teclado, etiqueta y foco después de cambiar estado. Para efectos o red, comprueba además limpieza y resultados que lleguen tarde. Para ejemplos puros, revisa que la entrada no se modifique accidentalmente. Justifica qué comprobación aplica al tema en lugar de repetir una lista de herramientas sin evidencia.
-
-[Volver a la práctica](PRACTICA.md)
+[Seguir el recorrido del código](DESARROLLO.md) · [Volver a la práctica](PRACTICA.md)
 
 ---
 

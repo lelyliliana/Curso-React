@@ -12,19 +12,11 @@ La implementación completa está en [App.jsx](ejemplo/App.jsx). Si importa un c
 
 Los tres reemplazos se calculan desde el mismo snapshot, de modo que solicitan el mismo valor siguiente: desde 0, el resultado es 1. La variante funcional encadena 1, 2 y 3. Reiniciar solicita 0 y una nueva pulsación vuelve a 3. Batching organiza actualizaciones; no convierte la variable capturada en una referencia mutable al estado más reciente.
 
-## Contraste que debes poder reproducir
+## Resolución concreta de la práctica
 
-Una pulsación; dos pulsaciones; reiniciar; reemplazos vs actualizadores.
+La referencia usa tres actualizadores y acumula tres por pulsación. Sustituir los tres por setCantidad(cantidad + 1) produce solo uno por pulsación. Para explicar la diferencia escribe las entradas de la cola, no tres logs que supongan una asignación inmediata. Reiniciar usa setCantidad(0) correctamente. El [componente original](ejemplo/App.jsx) conserva ambas acciones sin agregar un efecto.
 
-Compara la entrada y el resultado en la referencia antes de evaluar una variante. Identifica la primera operación que cambia el significado: el punto de conversión, una identidad, una dependencia, una transición o un efecto según el tema. Un mensaje de error distinto puede ser aceptable; presentar un fallo como éxito o perder la identidad de los datos no lo es.
-
-## Comprobación y límites
-
-Conserva casos de entrada y acciones observables. Las [pruebas del curso](../docs/VERIFICACION.md) verifican contratos concretos y rutas; no demuestran todos los programas que puedas construir a partir de ellos. Si agregas una regla nueva, incorpora un caso que falle al romperla, sin convertir cada línea de implementación en una aserción equivalente.
-
-Para los componentes con controles, compara teclado, etiqueta y foco después de cambiar estado. Para efectos o red, comprueba además limpieza y resultados que lleguen tarde. Para ejemplos puros, revisa que la entrada no se modifique accidentalmente. Justifica qué comprobación aplica al tema en lugar de repetir una lista de herramientas sin evidencia.
-
-[Volver a la práctica](PRACTICA.md)
+[Seguir el recorrido del código](DESARROLLO.md) · [Volver a la práctica](PRACTICA.md)
 
 ---
 

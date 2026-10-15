@@ -12,19 +12,13 @@ La implementación completa está en [App.jsx](ejemplo/App.jsx). Si importa un c
 
 Los dos consumidores dentro leen el mismo tema. El default null fuera del proveedor no contiene tema ni cambiar; un hook useTema puede comprobarlo y lanzar un error claro de configuración o elegir un fallback definido. No conviertas el default en una falsa sesión de usuario. Un estado de campo no relacionado puede permanecer local.
 
-## Contraste que debes poder reproducir
+## Resolución concreta de la práctica
 
-Dos consumidores; fuera del proveedor; toggle; estado local separado.
+La [extensión completa](ejemplo/Solucion.jsx) obtiene primero contexto y comprueba `contexto === null`. Solo después utiliza tema y cambiar. A y B pasan juntos de claro a oscuro; Fuera muestra tema no disponible. Esta política presenta un fallback. Una API reutilizable también podría decidir lanzar un error descriptivo, pero no debe desestructurar null accidentalmente.
 
-Compara la entrada y el resultado en la referencia antes de evaluar una variante. Identifica la primera operación que cambia el significado: el punto de conversión, una identidad, una dependencia, una transición o un efecto según el tema. Un mensaje de error distinto puede ser aceptable; presentar un fallo como éxito o perder la identidad de los datos no lo es.
+La [extensión resuelta completa](ejemplo/Solucion.jsx) se ejecuta en http://127.0.0.1:5173/#/solucion/19. Ábrela después de intentar la práctica; la referencia original sigue disponible en el enlace de regreso.
 
-## Comprobación y límites
-
-Conserva casos de entrada y acciones observables. Las [pruebas del curso](../docs/VERIFICACION.md) verifican contratos concretos y rutas; no demuestran todos los programas que puedas construir a partir de ellos. Si agregas una regla nueva, incorpora un caso que falle al romperla, sin convertir cada línea de implementación en una aserción equivalente.
-
-Para los componentes con controles, compara teclado, etiqueta y foco después de cambiar estado. Para efectos o red, comprueba además limpieza y resultados que lleguen tarde. Para ejemplos puros, revisa que la entrada no se modifique accidentalmente. Justifica qué comprobación aplica al tema en lugar de repetir una lista de herramientas sin evidencia.
-
-[Volver a la práctica](PRACTICA.md)
+[Seguir el recorrido del código](DESARROLLO.md) · [Volver a la práctica](PRACTICA.md)
 
 ---
 

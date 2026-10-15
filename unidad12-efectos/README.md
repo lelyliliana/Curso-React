@@ -1,5 +1,7 @@
 # Unidad 12: Render, eventos y efectos
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -127,8 +129,6 @@ Continúa con useEffect.
 
 El filtro de recursos se calcula durante render y no escribe en un sistema externo. El evento cambia búsqueda y deja que React derive la vista. El efecto sincroniza document.title, un recurso del navegador que está fuera de los nodos descritos por JSX, y restaura el título capturado en cleanup. La causa de esta sincronización es la cantidad actual de resultados; el efecto depende de esa cantidad y no de un array nuevo construido en cada render.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/12. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -176,15 +176,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Añade un contador de caracteres derivado. Observa qué pasa cuando cambias la búsqueda sin cambiar la cantidad de resultados, y al salir de la unidad.
 
 **Casos que debes registrar:** Tres recursos; uno; ninguno; cantidad sin cambiar; salir y cleanup.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

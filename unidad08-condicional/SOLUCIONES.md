@@ -12,19 +12,13 @@ La implementación completa está en [App.jsx](ejemplo/App.jsx). Si importa un c
 
 Incluye denied entre valores permitidos y define su salida. Es una simulación de denegación, no un control real de autorización. En una aplicación remota, la autorización pertenece al servidor. Mantener una fase en lugar de varios booleanos simplifica la tabla de aceptación y permite comprobar qué controles permanecen disponibles en cada resultado.
 
-## Contraste que debes poder reproducir
+## Resolución concreta de la práctica
 
-idle; loading; success; empty; error; denied simulado.
+La [extensión ejecutable](ejemplo/Solucion.jsx) añade denied y lo incluye en la condición de alert. Solo success representa la lista. empty informa ausencia de resultados, error informa fallo y denied informa falta de permiso. Los tres casos no intercambian sus mensajes. El aviso de simulación deja claro que elegir una opción no verifica permisos reales.
 
-Compara la entrada y el resultado en la referencia antes de evaluar una variante. Identifica la primera operación que cambia el significado: el punto de conversión, una identidad, una dependencia, una transición o un efecto según el tema. Un mensaje de error distinto puede ser aceptable; presentar un fallo como éxito o perder la identidad de los datos no lo es.
+La [extensión resuelta completa](ejemplo/Solucion.jsx) se ejecuta en http://127.0.0.1:5173/#/solucion/08. Ábrela después de intentar la práctica; la referencia original sigue disponible en el enlace de regreso.
 
-## Comprobación y límites
-
-Conserva casos de entrada y acciones observables. Las [pruebas del curso](../docs/VERIFICACION.md) verifican contratos concretos y rutas; no demuestran todos los programas que puedas construir a partir de ellos. Si agregas una regla nueva, incorpora un caso que falle al romperla, sin convertir cada línea de implementación en una aserción equivalente.
-
-Para los componentes con controles, compara teclado, etiqueta y foco después de cambiar estado. Para efectos o red, comprueba además limpieza y resultados que lleguen tarde. Para ejemplos puros, revisa que la entrada no se modifique accidentalmente. Justifica qué comprobación aplica al tema en lugar de repetir una lista de herramientas sin evidencia.
-
-[Volver a la práctica](PRACTICA.md)
+[Seguir el recorrido del código](DESARROLLO.md) · [Volver a la práctica](PRACTICA.md)
 
 ---
 

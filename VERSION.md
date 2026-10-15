@@ -1,11 +1,17 @@
-# Versión 1.1
+# Versión 1.2
 
-35 unidades conservadas en su orden. Las unidades 00 a 32 tienen laboratorios ejecutables en una galería común; todas incluyen práctica y solución razonada. Taller y proyecto final desarrollan reglas, estado, efectos, acceso, red, pruebas y publicación.
+Fecha: 2026-10-14 (America/Bogota).
 
-El entorno fija React/React DOM 19.3.0, React Router 8.4.0, Vite 8.3.3 y herramientas de desarrollo mediante package.json y package-lock.json. La guía utiliza Node 24 LTS desde 24.15.0 por requisitos del conjunto de herramientas y contempla Ubuntu, Windows y macOS.
+Las 35 unidades incorporan DESARROLLO.md con recorridos específicos del código y soluciones concretas de la práctica. Se retiran párrafos generales repetidos donde el nuevo desarrollo explica la decisión del tema.
 
-El proyecto integra tareas locales y catálogo con respuestas de API controladas. El guardado es del navegador/origen, falible y sin sincronización remota. Publicar dist no publica la API del proceso Vite. La extensión de formularios muestra acciones de React 19; el modelo controlado permanece como base.
+La galería conserva sus 33 laboratorios y suma diez extensiones resueltas en rutas propias. Cada extensión tiene código completo y enlace de regreso. El taller incluye un modelo puro de prioridad, serialización v2 y migración de documentos v1 válidos. Ese modelo no migra automáticamente el proyecto visual base, que conserva v1.
 
-Las pruebas verifican contratos concretos; no certifican ausencia de errores ni accesibilidad completa. React Compiler y Server Components no se activan en este proyecto.
+La unidad de depuración comprueba explícitamente texto no vacío antes de convertir y sumar; vacío o espacios producen null. Las pruebas cubren ese límite, los nuevos componentes y la migración.
 
-[Índice](README.md) · [Entorno](docs/ENTORNO.md) · [Verificación](docs/VERIFICACION.md)
+Se conservan las versiones fijadas de React, Router, Vite y herramientas. El recorrido de navegador admite elegir motor y conserva Firefox por defecto para el workflow. La verificación revisa también la presencia de los desarrollos y marcas de codificación dañada en Markdown.
+
+[Recorrido guiado](docs/RECORRIDO_GUIADO.md) · [Resultados y límites](docs/VERIFICACION.md)
+
+## Base 1.1
+
+35 unidades, galería de laboratorios, proyecto de tareas y catálogo, API local, pruebas de reglas/componentes/red y comprobación de publicación estática en subcarpeta. React Compiler y Server Components no están activados.

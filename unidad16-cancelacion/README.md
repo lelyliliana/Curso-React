@@ -1,5 +1,7 @@
 # Unidad 16: Cancelación, cleanup y carreras de red
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -118,8 +120,6 @@ Continúa con custom hooks.
 
 Cada nueva carga incrementa un identificador de solicitud y aborta la anterior. El resultado solo se acepta si el componente sigue activo y el id coincide con el actual. AbortController por sí solo no demuestra ausencia de carreras: una operación sustituida puede responder aun cuando no atienda la señal. Al desmontar, el cleanup invalida pendientes y solicita cancelación. Esta protección cubre la UI, no revierte automáticamente un trabajo remoto que el servidor ya haya realizado.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/16. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -145,15 +145,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Inicia lento y luego normal; espera más de 800 ms. Cambia de ruta durante lento y vuelve. Comprueba resultado vigente y que la nueva vista no reciba una respuesta antigua.
 
 **Casos que debes registrar:** Cancelación manual; 400 ms; respuesta vieja; desmontaje y nuevo montaje.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

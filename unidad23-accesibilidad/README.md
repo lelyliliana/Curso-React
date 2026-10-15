@@ -1,5 +1,7 @@
 # Unidad 23: Accesibilidad en React
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -136,8 +138,6 @@ Continúa con pruebas.
 
 Los controles son botones nativos con nombres visibles. Agregar mantiene foco en el botón y la región status comunica cantidad. Limpiar elimina recursos y mueve foco a Agregar, un destino que sigue existiendo. Los ids de recursos son identidad de la lista, no un historial global. No pongas aria-live en toda la aplicación: los anuncios deben comunicar cambios relevantes sin repetir contenido completo ni disputar el foco con otras regiones.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/23. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -190,15 +190,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Realiza tres agregados con teclado y limpia. Añade un mensaje que comunique cantidad eliminada y verifica el foco con un lector de pantalla.
 
 **Casos que debes registrar:** Tres activaciones; anuncio; limpiar; foco válido; teclado y lector.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

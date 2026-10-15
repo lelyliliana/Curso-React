@@ -12,19 +12,11 @@ La implementación completa está en [App.jsx](ejemplo/App.jsx). Si importa un c
 
 Tareas importa dominio, reducer y almacenamiento; reducer y almacenamiento dependen de dominio. El cliente del catálogo y su hook no dependen del estado local de tareas. La acción lleva id estable, no índice visible. Un ciclo dominio → Tareas → dominio mezclaría presentación y reglas; conservar límites permite probar transformaciones con Node.
 
-## Contraste que debes poder reproducir
+## Resolución concreta de la práctica
 
-Dependencias; filtro; edición por id; pruebas puras; sin ciclos.
+La búsqueda solicitada ya está implementada: buscar es estado local y filtrarTareas combina criterios. Para ampliar sin duplicarla, calcula `estado.tareas.filter(t => !t.completada).length` durante render y muestra esa cuenta. Editar desde un filtro conserva id y estado; filtrar no elimina datos. El mapa de dependencias no debe contener una flecha del dominio a Tareas ni Storage dentro del reducer.
 
-Compara la entrada y el resultado en la referencia antes de evaluar una variante. Identifica la primera operación que cambia el significado: el punto de conversión, una identidad, una dependencia, una transición o un efecto según el tema. Un mensaje de error distinto puede ser aceptable; presentar un fallo como éxito o perder la identidad de los datos no lo es.
-
-## Comprobación y límites
-
-Conserva casos de entrada y acciones observables. Las [pruebas del curso](../docs/VERIFICACION.md) verifican contratos concretos y rutas; no demuestran todos los programas que puedas construir a partir de ellos. Si agregas una regla nueva, incorpora un caso que falle al romperla, sin convertir cada línea de implementación en una aserción equivalente.
-
-Para los componentes con controles, compara teclado, etiqueta y foco después de cambiar estado. Para efectos o red, comprueba además limpieza y resultados que lleguen tarde. Para ejemplos puros, revisa que la entrada no se modifique accidentalmente. Justifica qué comprobación aplica al tema en lugar de repetir una lista de herramientas sin evidencia.
-
-[Volver a la práctica](PRACTICA.md)
+[Seguir el recorrido del código](DESARROLLO.md) · [Volver a la práctica](PRACTICA.md)
 
 ---
 

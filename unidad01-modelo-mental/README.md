@@ -1,5 +1,7 @@
 # Unidad 01: Modelo mental de React
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -134,8 +136,6 @@ Continúa con JSX.
 
 El componente mantiene nombre como dato de estado y calcula saludo durante cada render. No hay dos variables reactivas independientes para el mismo hecho. setNombre solicita otro render; ese render recibe el nuevo snapshot y produce el texto correspondiente. React decide las actualizaciones del DOM durante commit. Renderizar no significa sustituir todo el documento ni ejecutar un programa imperativo que deba modificar manualmente cada nodo.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/01. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -168,15 +168,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Añade una longitud del nombre calculada durante render. Comprueba que cambiar el nombre actualice saludo y longitud sin añadir otro estado ni un efecto.
 
 **Casos que debes registrar:** Ana; Luis; vacío; texto largo; modificar sin enviar.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

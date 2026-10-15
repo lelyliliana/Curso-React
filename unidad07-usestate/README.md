@@ -1,5 +1,7 @@
 # Unidad 07: Estado con useState
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -145,8 +147,6 @@ Continúa con render condicional.
 
 cantidad pertenece al render que creó el handler. Llamar al setter no cambia retroactivamente esa variable. Las tres funciones actualizadoras reciben sucesivamente el resultado pendiente de la anterior, por lo que el resultado aumenta tres. Deben ser puras: no guardes en Storage ni envíes una petición dentro de ellas. React puede ejecutar comprobaciones adicionales en desarrollo y no deberías basar efectos externos en la cantidad de invocaciones del actualizador.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/07. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -183,15 +183,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 En una copia, reemplaza los tres actualizadores por setCantidad(cantidad + 1). Predice el resultado y contrástalo; después restaura la versión correcta y prueba Reiniciar.
 
 **Casos que debes registrar:** Una pulsación; dos pulsaciones; reiniciar; reemplazos vs actualizadores.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

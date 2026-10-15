@@ -1,5 +1,7 @@
-"""Recorrido real de los laboratorios y del proyecto con Firefox."""
+"""Recorrido real de laboratorios, extensiones y proyecto (Firefox por defecto)."""
 import json
+import os
+import re
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from threading import Thread
 import subprocess
@@ -24,7 +26,12 @@ try:
             origen=linea;break
     assert origen,'No se obtuvo el origen del servidor Vite'
     with sync_playwright() as p:
-        browser=p.firefox.launch();context=browser.new_context();page=context.new_page()
+        motor=os.environ.get('REACT_BROWSER','firefox')
+        assert motor in ('firefox','chromium','webkit'),'Motor de navegador no admitido'
+        opciones={}
+        ejecutable=os.environ.get('REACT_BROWSER_EXECUTABLE')
+        if ejecutable: opciones['executable_path']=ejecutable
+        browser=getattr(p,motor).launch(**opciones);context=browser.new_context();page=context.new_page()
         errores=[]
         page.on('pageerror',lambda error:errores.append(str(error)))
         page.on('response',lambda response:errores.append(f'{response.status} {response.url}') if response.status>=400 and '/api/catalogo' not in response.url else None)
@@ -80,7 +87,7 @@ try:
             elif n==17:
                 page.get_by_role('button',name='Sumar A',exact=True).click();expect(page.locator('main')).to_contain_text('Cantidad: 1');expect(page.locator('main')).to_contain_text('Cantidad: 10')
             elif n==18:
-                page.get_by_label('Buscar en URL').fill('React');comprobar('?q=React' in page.url,'Filtro en URL');page.reload();expect(page.get_by_label('Buscar en URL')).to_have_value('React')
+                page.get_by_label('Buscar en URL').fill('React');expect(page).to_have_url(re.compile(r'\?q=React$'));comprobar('?q=React' in page.url,'Filtro en URL');page.reload();expect(page.get_by_label('Buscar en URL')).to_have_value('React')
                 page.get_by_role('link',name='React',exact=True).click();expect(page.locator('main')).to_contain_text('Detalle: React')
                 page.goto(origen+'/#/laboratorio/18/detalle/99');expect(page.locator('main')).to_contain_text('Recurso no encontrado')
             elif n==19:
@@ -109,6 +116,59 @@ try:
             elif n==31:expect(page.locator('main')).to_contain_text('no es un secreto')
             elif n==32:expect(page.get_by_role('link',name='Abrir proyecto construido')).to_be_visible()
             comprobar(not errores,f'Errores inesperados {n}: {errores}')
+        # Extensiones resueltas: acceso desde la unidad, URL directa e interacción.
+        for n in [3,4,8,10,13,17,19,20,21,23]:
+            page.goto(origen+f'/#/laboratorio/{n:02d}')
+            page.get_by_role('link',name='Abrir extensión resuelta').click()
+            expect(page.locator('main h1')).to_have_text(f'Extensión resuelta de la Unidad {n:02d}')
+            page.reload();expect(page.locator('main h2').first).to_be_visible()
+            for ancho in [320,768,1440]:
+                page.set_viewport_size({'width':ancho,'height':900})
+                for escala in ['100%','200%']:
+                    page.evaluate('(v)=>document.documentElement.style.fontSize=v',escala)
+                    comprobar(page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),f'Extensión {n} {ancho} {escala}')
+            page.set_viewport_size({'width':1000,'height':800});page.evaluate("document.documentElement.style.fontSize='100%'")
+            if n==3:
+                page.get_by_role('button',name='Sumar Primero',exact=True).click()
+                page.get_by_role('button',name='Sumar Segundo',exact=True).click()
+                page.get_by_role('button',name='Recrear Primero',exact=True).click()
+                expect(page.get_by_role('region',name='Primero',exact=True)).to_contain_text('Cantidad: 0')
+                expect(page.get_by_role('region',name='Segundo',exact=True)).to_contain_text('Cantidad: 1')
+            elif n==4:
+                expect(page.get_by_text('Cupos: 0',exact=True)).to_be_visible()
+                expect(page.get_by_text('Cupos desconocidos',exact=True)).to_be_visible()
+            elif n==8:
+                page.get_by_label('Estado simulado').select_option('success');expect(page.locator('main ul li')).to_have_count(2)
+                page.get_by_label('Estado simulado').select_option('denied');expect(page.get_by_role('alert')).to_contain_text('permiso');expect(page.locator('main ul')).to_have_count(0)
+            elif n==10:
+                primero=page.get_by_role('region',name='Primer formulario',exact=True)
+                segundo=page.get_by_role('region',name='Segundo formulario',exact=True)
+                primero.get_by_label('Nombre ficticio').fill('A');primero.get_by_role('button',name='Guardar nombre').click()
+                expect(primero.get_by_role('alert')).to_contain_text('2 a 40')
+                primero.get_by_label('Nombre ficticio').fill(' Ana ');primero.get_by_role('button',name='Guardar nombre').click()
+                expect(primero).to_contain_text('Último nombre del primero: Ana');expect(segundo).to_contain_text('Último nombre del segundo: Sin guardar')
+            elif n==13:
+                page.get_by_label('Intervalo',exact=True).select_option('200')
+                expect(page.get_by_role('status')).not_to_have_text('Ticks: 0')
+                page.get_by_role('button',name='Ocultar reloj').click();expect(page.locator('main')).to_contain_text('Reloj desmontado.')
+                page.get_by_role('button',name='Mostrar reloj').click();expect(page.get_by_role('status')).to_have_text('Ticks: 0')
+            elif n==17:
+                page.get_by_role('button',name='Sumar C',exact=True).click();page.get_by_role('button',name='Cambiar inicio de C a 50').click()
+                expect(page.get_by_role('region',name='Control C',exact=True)).to_contain_text('Cantidad: 101')
+                page.get_by_role('button',name='Reiniciar C',exact=True).click();expect(page.get_by_role('region',name='Control C',exact=True)).to_contain_text('Cantidad: 50')
+            elif n==19:
+                page.get_by_role('button',name='Cambiar desde A').click();expect(page.locator('main')).to_contain_text('B: oscuro');expect(page.locator('main')).to_contain_text('Fuera: tema no disponible')
+            elif n==20:
+                page.get_by_role('button',name='sumarDos',exact=True).click();expect(page.get_by_role('status')).to_have_text('Cantidad: 2')
+            elif n==21:
+                page.get_by_label('Buscar título').fill('pra');page.get_by_label('Estado',exact=True).select_option('pendientes')
+                expect(page.get_by_role('status')).to_have_text('0 de 2 tareas')
+                page.get_by_label('Estado',exact=True).select_option('completadas');expect(page.locator('main ul')).to_have_text('Practicar')
+            elif n==23:
+                for _ in range(3):page.get_by_role('button',name='Agregar recurso').click()
+                page.get_by_role('button',name='Limpiar recursos').click();expect(page.get_by_role('status')).to_contain_text('Se eliminaron 3 recursos')
+                expect(page.get_by_role('button',name='Agregar recurso')).to_be_focused()
+            comprobar(not errores,f'Errores extensión {n}: {errores}')
         # Acciones actuales de React 19 (extensión opcional).
         page.goto(origen+'/#/laboratorio/10')
         page.get_by_text('Extensión: acciones de React 19',exact=True).click()
@@ -179,10 +239,13 @@ try:
         web.reload();expect(web.locator('main')).to_contain_text('Detalle: React')
         web.goto(base+'#/proyecto/catalogo');web.get_by_role('button',name='Cargar catálogo').click()
         expect(web.get_by_role('status')).to_contain_text('http: HTTP 404')
+        web.goto(base+'#/solucion/20');web.reload()
+        web.get_by_role('button',name='sumarDos',exact=True).click();expect(web.get_by_role('status')).to_have_text('Cantidad: 2')
         comprobar(not fallos_build,f'Build en subcarpeta: {fallos_build}')
         construido.close()
+        version=browser.version
         otro.close();context.close();browser.close()
-    print(f'{cuenta} comprobaciones y recorridos de interacción correctos en Firefox.')
+    print(f'{cuenta} comprobaciones y recorridos de interacción correctos en {motor} {version}.')
 finally:
     if estatico is not None:
         estatico.shutdown();estatico.server_close()

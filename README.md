@@ -6,7 +6,7 @@ Puedes leer las lecciones aquí sin conocer GitHub. Al terminar cada unidad, usa
 
 [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
-**Versión 1.1**
+**Versión 1.2**
 
 Curso abierto para aprender a construir **interfaces web modernas con React**, comprendiendo su modelo de componentes, estado, renderizado y efectos antes de introducir abstracciones adicionales.
 
@@ -27,6 +27,12 @@ Curso abierto para aprender a construir **interfaces web modernas con React**, c
 Las unidades 00 a 32 tienen componentes completos; la entrada y dependencias se comparten desde la raíz. GitHub muestra fuente, no ejecuta JSX. No necesitas generar 33 proyectos distintos ni usar una API pública para ensayar fallos.
 
 El entorno usa React 19.3, Router 8.4 y Vite 8.3 con versiones fijadas. La guía indica Node 24 LTS desde 24.15.0, considerando también herramientas de pruebas. No depende de WSL ni Docker.
+
+## Profundizar y comparar
+
+Cada una de las 35 unidades incluye un desarrollo que sigue los archivos reales, explica decisiones y propone resultados contrastables. Las soluciones resuelven la actividad concreta. Diez extensiones completas se abren desde la galería para comparar identidad, props, formularios, efectos, hooks, Context, reducer, filtros y foco.
+
+Consulta el [recorrido guiado y las extensiones ejecutables](docs/RECORRIDO_GUIADO.md). El taller añade un modelo puro de prioridad y migración versionada con pruebas; la aplicación base conserva su esquema v1.
 
 ## Consulta y comprobación
 

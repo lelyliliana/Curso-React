@@ -2,7 +2,8 @@ import { useState } from "react";
 export default function App() {
   const [texto, setTexto] = useState("12");
   const numero = Number(texto);
-  const resultado = texto.trim() && Number.isFinite(numero) ? numero + 3 : null;
+  const resultado =
+    texto.trim() !== "" && Number.isFinite(numero) ? numero + 3 : null;
   return (
     <section>
       <h2>Inspeccionar props, estado y conversión</h2>

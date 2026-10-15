@@ -12,19 +12,13 @@ La implementación completa está en [App.jsx](ejemplo/App.jsx). Si importa un c
 
 Cada useId obtiene una relación distinta entre label e input. El callback solo se invoca después de validar; el padre puede guardar nombres ficticios en su propio estado. El valor recibido es Ana, sin espacios exteriores. No declares que el formulario guarda datos remotamente: el ejemplo solo ejecuta una función local. Consulta la prueba real de componentes para observar esas aserciones.
 
-## Contraste que debes poder reproducir
+## Resolución concreta de la práctica
 
-Dos instancias; vacío nativo; un carácter; espacios; Ana; máximo 40.
+La [solución completa](ejemplo/Solucion.jsx) reutiliza dos FormularioNombre con callbacks setPrimero y setSegundo. Un carácter se rechaza antes del callback; " Ana " se normaliza a Ana. useId mantiene etiquetas independientes. El estado de cada padre cambia solo por el callback correspondiente. required y maxLength siguen activos; la demostración no sustituye esos atributos por una validación exclusivamente visual.
 
-Compara la entrada y el resultado en la referencia antes de evaluar una variante. Identifica la primera operación que cambia el significado: el punto de conversión, una identidad, una dependencia, una transición o un efecto según el tema. Un mensaje de error distinto puede ser aceptable; presentar un fallo como éxito o perder la identidad de los datos no lo es.
+La [extensión resuelta completa](ejemplo/Solucion.jsx) se ejecuta en http://127.0.0.1:5173/#/solucion/10. Ábrela después de intentar la práctica; la referencia original sigue disponible en el enlace de regreso.
 
-## Comprobación y límites
-
-Conserva casos de entrada y acciones observables. Las [pruebas del curso](../docs/VERIFICACION.md) verifican contratos concretos y rutas; no demuestran todos los programas que puedas construir a partir de ellos. Si agregas una regla nueva, incorpora un caso que falle al romperla, sin convertir cada línea de implementación en una aserción equivalente.
-
-Para los componentes con controles, compara teclado, etiqueta y foco después de cambiar estado. Para efectos o red, comprueba además limpieza y resultados que lleguen tarde. Para ejemplos puros, revisa que la entrada no se modifique accidentalmente. Justifica qué comprobación aplica al tema en lugar de repetir una lista de herramientas sin evidencia.
-
-[Volver a la práctica](PRACTICA.md)
+[Seguir el recorrido del código](DESARROLLO.md) · [Volver a la práctica](PRACTICA.md)
 
 ---
 

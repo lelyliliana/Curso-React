@@ -1,5 +1,7 @@
 # Unidad 00: Entorno y primer proyecto React
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -176,8 +178,6 @@ Continúa con modelo mental.
 
 Vite entrega módulos y transforma JSX. React se monta desde src/main.jsx usando createRoot sobre el elemento root del HTML. El componente de la unidad se carga desde el índice común; no necesitas generar otro proyecto para cada ejercicio. Node ejecuta las herramientas y la API local, mientras que document y la interfaz pertenecen al navegador. Una instalación de Node no convierte JSX en un archivo que puedas abrir directamente con doble clic.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/00. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -202,15 +202,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Cambia el texto del primer componente. Después introduce y corrige una etiqueta JSX sin cerrar; compara un fallo de compilación con una ruta de importación equivocada.
 
 **Casos que debes registrar:** Texto original y modificado; import inexistente; etiqueta sin cierre.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

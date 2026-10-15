@@ -12,19 +12,13 @@ La implementación completa está en [App.jsx](ejemplo/App.jsx). Si importa un c
 
 Si null significa desconocido, muestra una etiqueta explícita; si solo se admiten enteros, recházalo con un mensaje de dominio antes de renderizar. No lo reemplaces por 20 suponiendo que el default de destructuring lo hizo. Conserva 0 como cupo válido. La elección es un contrato del componente, no una regla universal de React.
 
-## Contraste que debes poder reproducir
+## Resolución concreta de la práctica
 
-cupos 0; ausente; undefined; null; -1; cadena numérica.
+La [solución ejecutable](ejemplo/Solucion.jsx) evalúa primero null y luego Number.isInteger(cupos) junto con cupos >= 0. Cero muestra Cupos: 0; ausente y undefined muestran 20; null muestra Cupos desconocidos; -1 y "3" muestran Dato de cupos inválido. 1.5 también se rechaza. No conviertas la cadena automáticamente si el contrato de entrada exige un número.
 
-Compara la entrada y el resultado en la referencia antes de evaluar una variante. Identifica la primera operación que cambia el significado: el punto de conversión, una identidad, una dependencia, una transición o un efecto según el tema. Un mensaje de error distinto puede ser aceptable; presentar un fallo como éxito o perder la identidad de los datos no lo es.
+La [extensión resuelta completa](ejemplo/Solucion.jsx) se ejecuta en http://127.0.0.1:5173/#/solucion/04. Ábrela después de intentar la práctica; la referencia original sigue disponible en el enlace de regreso.
 
-## Comprobación y límites
-
-Conserva casos de entrada y acciones observables. Las [pruebas del curso](../docs/VERIFICACION.md) verifican contratos concretos y rutas; no demuestran todos los programas que puedas construir a partir de ellos. Si agregas una regla nueva, incorpora un caso que falle al romperla, sin convertir cada línea de implementación en una aserción equivalente.
-
-Para los componentes con controles, compara teclado, etiqueta y foco después de cambiar estado. Para efectos o red, comprueba además limpieza y resultados que lleguen tarde. Para ejemplos puros, revisa que la entrada no se modifique accidentalmente. Justifica qué comprobación aplica al tema en lugar de repetir una lista de herramientas sin evidencia.
-
-[Volver a la práctica](PRACTICA.md)
+[Seguir el recorrido del código](DESARROLLO.md) · [Volver a la práctica](PRACTICA.md)
 
 ---
 

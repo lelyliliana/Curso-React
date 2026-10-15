@@ -1,5 +1,7 @@
 # Unidad 19: Context
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -135,8 +137,6 @@ Continúa con reducer.
 
 El proveedor delimita qué descendientes reciben tema y cambiar. El estado sigue teniendo un propietario; Context distribuye su valor, no sustituye por sí mismo un modelo de estado. La sintaxis de proveedor directa <Tema value=...> corresponde a React 19; la forma <Tema.Provider> sigue siendo reconocible en código anterior. Un valor objeto nuevo puede actualizar consumidores; no concluyas que todo estado local necesita un contexto global.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/19. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -181,15 +181,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Añade un segundo consumidor dentro del proveedor y uno fuera. Decide una respuesta explícita para ausencia de proveedor y conserva los estados locales de formularios.
 
 **Casos que debes registrar:** Dos consumidores; fuera del proveedor; toggle; estado local separado.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

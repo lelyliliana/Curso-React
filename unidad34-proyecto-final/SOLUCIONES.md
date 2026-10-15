@@ -22,7 +22,7 @@ La navegación actualiza título y un destino de foco estable. Agregar/editar re
 
 ## Evidencia y límites
 
-La suite de componentes prueba entradas, callbacks, CRUD, corrupción, fallo de escritura y resultados remotos. La de Node prueba reglas y HTTP controlado. El recorrido de Firefox comprueba laboratorios y proyecto con anchos y texto ampliado. No constituye una certificación de accesibilidad ni una prueba de todos los navegadores.
+La suite de componentes prueba entradas, callbacks, CRUD, corrupción, fallo de escritura y resultados remotos. La de Node prueba reglas y HTTP controlado. El recorrido de navegador comprueba laboratorios, extensiones y proyecto con anchos y texto ampliado. No constituye una certificación de accesibilidad ni una prueba de todos los navegadores.
 
 El guardado usa un solo origen de navegador y no coordina pestañas. Los id pueden reutilizarse después de eliminar el más alto; no sirven como identidad global de auditoría. El catálogo depende de la API del proceso Vite en dev/preview; una copia estática de dist no ejecuta ese plugin.
 
@@ -31,6 +31,12 @@ El guardado usa un solo origen de navegador y no coordina pestañas. Los id pued
 Prioridades, búsqueda compartible en URL o migración de versión pueden ampliar el contrato. Cada extensión requiere reglas y casos nuevos. Una autenticación real, sincronización o backend introduciría otra arquitectura; no la anuncies por haber agregado un botón o una variable VITE_.
 
 [Revisar checklist](CHECKLIST.md) · [Revisar rúbrica](RUBRICA.md)
+
+## Resolución concreta de la práctica
+
+Contrasta la referencia completa con PRACTICA.md y CHECKLIST.md. Dos tareas con igual título deben seguir siendo registros distintos; editar conserva id y completada; cancelar conserva el dato anterior. El guardado no se promete ante una excepción y el catálogo no comparte su estado de error con las tareas. La publicación estática debe declarar la ausencia de API si no se proporciona un servicio. Entrega resultados observados, no una lista de casillas marcada sin reproducir los flujos.
+
+[Seguir el recorrido del código](DESARROLLO.md) · [Volver a la práctica](PRACTICA.md)
 
 ---
 

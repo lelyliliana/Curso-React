@@ -1,5 +1,7 @@
 # Unidad 04: Props y flujo de datos
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -128,8 +130,6 @@ Continúa con composición.
 
 Props comunica datos del padre al hijo. El hijo no debería mutar el objeto recibido para comunicar un cambio: el padre continúa siendo propietario de esos datos. Los valores por defecto de destructuring se aplican a undefined, no a null, 0 o false. Un ejemplo puede observar props de distintos valores sin que eso convierta todos esos valores en válidos para una aplicación. Cuando una regla exige números enteros o texto no vacío, valida esa regla en el límite correspondiente.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/04. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -163,15 +163,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Añade una validación de cupos entero no negativo. Decide si null debe rechazarse o significar dato desconocido; haz visible esa decisión en la ficha.
 
 **Casos que debes registrar:** cupos 0; ausente; undefined; null; -1; cadena numérica.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

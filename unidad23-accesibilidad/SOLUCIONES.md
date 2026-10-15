@@ -12,19 +12,13 @@ La implementación completa está en [App.jsx](ejemplo/App.jsx). Si importa un c
 
 Captura recursos.length en el handler antes de setRecursos([]) para construir el mensaje. El nuevo estado se ve en otro render; leer recursos inmediatamente después del setter todavía lee el snapshot anterior. Un texto de resultado en role=status suele ser suficiente para el anuncio. Las pruebas automáticas de roles y foco no certifican accesibilidad completa: escucha y recorre la interacción real.
 
-## Contraste que debes poder reproducir
+## Resolución concreta de la práctica
 
-Tres activaciones; anuncio; limpiar; foco válido; teclado y lector.
+La [solución ejecutable](ejemplo/Solucion.jsx) conserva mensaje y recursos. limpiar escribe Se eliminaron 3 recursos cuando hay tres, vacía la colección y enfoca agregar.current. La segunda limpieza informa cero. Usa Tab y Enter y comprueba el elemento activo; una captura visual del botón resaltado no sustituye el recorrido con lector de pantalla.
 
-Compara la entrada y el resultado en la referencia antes de evaluar una variante. Identifica la primera operación que cambia el significado: el punto de conversión, una identidad, una dependencia, una transición o un efecto según el tema. Un mensaje de error distinto puede ser aceptable; presentar un fallo como éxito o perder la identidad de los datos no lo es.
+La [extensión resuelta completa](ejemplo/Solucion.jsx) se ejecuta en http://127.0.0.1:5173/#/solucion/23. Ábrela después de intentar la práctica; la referencia original sigue disponible en el enlace de regreso.
 
-## Comprobación y límites
-
-Conserva casos de entrada y acciones observables. Las [pruebas del curso](../docs/VERIFICACION.md) verifican contratos concretos y rutas; no demuestran todos los programas que puedas construir a partir de ellos. Si agregas una regla nueva, incorpora un caso que falle al romperla, sin convertir cada línea de implementación en una aserción equivalente.
-
-Para los componentes con controles, compara teclado, etiqueta y foco después de cambiar estado. Para efectos o red, comprueba además limpieza y resultados que lleguen tarde. Para ejemplos puros, revisa que la entrada no se modifique accidentalmente. Justifica qué comprobación aplica al tema en lugar de repetir una lista de herramientas sin evidencia.
-
-[Volver a la práctica](PRACTICA.md)
+[Seguir el recorrido del código](DESARROLLO.md) · [Volver a la práctica](PRACTICA.md)
 
 ---
 

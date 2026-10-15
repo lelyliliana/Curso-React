@@ -1,5 +1,7 @@
 # Unidad 31: Configuración y variables de entorno
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -104,8 +106,6 @@ Continúa con build.
 
 VITE_NOMBRE_CURSO se lee como configuración pública y tiene un fallback. Vite incorpora variables expuestas al código del cliente; .env ignorado por Git no vuelve secreto el valor del bundle. Cambiar .env requiere reiniciar la herramienta según su flujo y volver a construir la salida que se publicará. Un nombre de curso es adecuado; una clave privada, contraseña o secreto de firma no lo es. Los valores de import.meta.env son APIs de la herramienta, no de cualquier archivo Node.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/31. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -132,15 +132,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Copia .env.example como .env y cambia el nombre ficticio. Reinicia dev, construye y busca ese texto en dist. Luego retira el archivo local para comprobar fallback.
 
 **Casos que debes registrar:** Example; fallback; reinicio; build; valor visible; sin secretos.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

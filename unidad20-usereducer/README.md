@@ -1,5 +1,7 @@
 # Unidad 20: useReducer y transiciones de estado
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -144,8 +146,6 @@ Continúa con estado de aplicación.
 
 El reducer recibe estado anterior y una acción y calcula un estado siguiente sin DOM, red ni almacenamiento. Para cada entrada válida, el resultado debe ser reproducible. dispatch no cambia inmediatamente la variable cantidad del handler actual. La acción expresa intención; el componente no tiene que reproducir cada paso de la transición. En el proyecto las reglas de tareas se componen en un reducer que informa fallos sin perder datos ni incrementar una revisión válida.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/20. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -188,15 +188,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Añade sumarDos al reducer y comprueba los límites en una prueba pura. Llama dos veces al reducer con la misma entrada y compara resultados.
 
 **Casos que debes registrar:** 0; sumar; sumarDos; reiniciar; acción desconocida; dos invocaciones iguales.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

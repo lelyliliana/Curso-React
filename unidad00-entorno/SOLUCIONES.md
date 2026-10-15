@@ -12,19 +12,11 @@ La implementación completa está en [App.jsx](ejemplo/App.jsx). Si importa un c
 
 Distingue servidor iniciado, transformación y render. La ruta equivocada falla al obtener o resolver un módulo; la etiqueta inválida impide transformar JSX. Solo después de corregir esos recursos tiene sentido investigar estado o eventos. No borres el lockfile para reparar un componente.
 
-## Contraste que debes poder reproducir
+## Resolución concreta de la práctica
 
-Texto original y modificado; import inexistente; etiqueta sin cierre.
+El cambio de texto debe aparecer en el laboratorio 00; el encabezado y la navegación comunes permanecen. Una etiqueta incompleta falla al transformar JSX. Un import con una ruta equivocada falla al resolver el módulo, aunque su JSX sea válido. Comprueba cada error por separado y restaura ambos. La solución de código completa sigue siendo [App.jsx](ejemplo/App.jsx); no necesitas sustituir la entrada, crear otra raíz ni anidar routers.
 
-Compara la entrada y el resultado en la referencia antes de evaluar una variante. Identifica la primera operación que cambia el significado: el punto de conversión, una identidad, una dependencia, una transición o un efecto según el tema. Un mensaje de error distinto puede ser aceptable; presentar un fallo como éxito o perder la identidad de los datos no lo es.
-
-## Comprobación y límites
-
-Conserva casos de entrada y acciones observables. Las [pruebas del curso](../docs/VERIFICACION.md) verifican contratos concretos y rutas; no demuestran todos los programas que puedas construir a partir de ellos. Si agregas una regla nueva, incorpora un caso que falle al romperla, sin convertir cada línea de implementación en una aserción equivalente.
-
-Para los componentes con controles, compara teclado, etiqueta y foco después de cambiar estado. Para efectos o red, comprueba además limpieza y resultados que lleguen tarde. Para ejemplos puros, revisa que la entrada no se modifique accidentalmente. Justifica qué comprobación aplica al tema en lugar de repetir una lista de herramientas sin evidencia.
-
-[Volver a la práctica](PRACTICA.md)
+[Seguir el recorrido del código](DESARROLLO.md) · [Volver a la práctica](PRACTICA.md)
 
 ---
 

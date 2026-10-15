@@ -1,5 +1,7 @@
 # Unidad 28: Re-renderizados y rendimiento
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -118,8 +120,6 @@ Continúa con memoización.
 
 Profiler informa datos de renders comprometidos en una compilación de desarrollo apropiada. El handler onRender registra fuera del render; no actualiza el mismo estado medido y evita un ciclo de instrumentación. El contador del padre cambia aunque la lista fija siga igual; hay que distinguir invocar una función de componente, reconciliar y modificar nodos. StrictMode añade comprobaciones en desarrollo y una build estándar de producción no proporciona el mismo perfil de instrumentación.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/28. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -163,15 +163,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Registra diez interacciones comparables. Añade una lista más grande en una copia y analiza duración; distingue evidencia local de una mejora universal.
 
 **Casos que debes registrar:** Baseline; diez muestras; lista fija; lista mayor; render vs DOM.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

@@ -1,5 +1,7 @@
 # Unidad 21: Diseñar el estado de una aplicación
 
+**[Recorrido del código y resolución paso a paso](DESARROLLO.md)**
+
 [Volver al índice del curso](../README.md) · [Ver el curso en Aprende con Leli](https://lelyliliana.github.io/aprende-con-leli/cursos/react/)
 
 ## Qué aprenderás
@@ -104,8 +106,6 @@ Continúa con persistencia.
 
 Las tareas son datos del dominio; filtro expresa la vista local; visibles es un cálculo derivado. No hace falta sincronizar una copia de visibles en un efecto. Cuando un filtro deba compartirse o sobrevivir Atrás/recarga puede pertenecer a URL, como en routing. Datos remotos, estado persistido y campos de formulario tienen ciclos distintos: reunirlos en un objeto global no resuelve automáticamente esas diferencias. Empieza identificando propietario, duración y fuente de cada hecho.
 
-Un componente correcto conserva su contrato cuando cambian entradas y condiciones. Antes de añadir una optimización o una abstracción, identifica qué dato tiene propietario, qué resultado se deriva y qué efecto toca un recurso externo. En este laboratorio puedes observar esas decisiones y comparar una modificación concreta con la referencia.
-
 ### Preparar y abrir
 
 Sigue [ENTORNO.md](../docs/ENTORNO.md) desde la raíz del curso. Después abre http://127.0.0.1:5173/#/laboratorio/21. El [archivo App.jsx](ejemplo/App.jsx) es el componente completo de la unidad. GitHub muestra código fuente: para interactuar necesitas la copia local y el servidor Vite.
@@ -155,15 +155,11 @@ export default function App() {
 }
 ```
 
-Lee primero los imports, después el estado/valores derivados y al final los handlers y JSX. Los cambios de estado solicitan otro render: no cambian el snapshot ya capturado por un handler. En componentes que importan una feature, abre el archivo importado para seguir su contrato; no confundas un wrapper visual con toda la lógica del flujo.
-
 ### Experimentar y comprobar
 
 Añade una búsqueda local que se combine con filtro. Explica qué habría que cambiar si esa búsqueda debiera compartirse mediante un enlace.
 
 **Casos que debes registrar:** Todas; pendientes; completadas; combinación con búsqueda; origen conservado.
-
-Escribe la predicción antes de modificar. Cambia una condición por vez y contrasta el resultado visible con sus datos de entrada. Console y Network aportan diagnóstico, pero una ausencia de excepciones no prueba por sí sola que la regla o la interacción sean correctas. Restaura las variantes defectuosas antes de continuar.
 
 ### Actividad y solución
 

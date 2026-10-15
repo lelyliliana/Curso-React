@@ -53,6 +53,13 @@ for (const p of archivos) {
       } else referencia(p, m[1]);
     }
   if (ext === ".md") {
+    if (
+      /\uFFFD|Ã[\x80-\xBF]|Â[\x80-\xBF]|[\uE200\uE201]|contentReference|oaicite|<\|(?:im_start|im_end|system|assistant)\|>/.test(
+        texto,
+      )
+    )
+      fallos.push(`${p}: marca interna o codificación dañada`);
+
     for (const m of texto.matchAll(/```(js|jsx)\n([\s\S]*?)```/g)) {
       fragmentos++;
       await sintaxis(
@@ -72,7 +79,12 @@ if (unidades.length !== 35) fallos.push("Se requieren las 35 unidades.");
 for (const [i, u] of unidades.entries()) {
   if (!u.startsWith(`unidad${String(i).padStart(2, "0")}-`))
     fallos.push("Secuencia incorrecta");
-  for (const f of ["README.md", "PRACTICA.md", "SOLUCIONES.md"])
+  for (const f of [
+    "README.md",
+    "PRACTICA.md",
+    "SOLUCIONES.md",
+    "DESARROLLO.md",
+  ])
     if (!existsSync(resolve(raiz, u, f))) fallos.push(`${u}/${f} ausente`);
   if (i < 33 && !existsSync(resolve(raiz, u, "ejemplo/App.jsx")))
     fallos.push(`Laboratorio ausente: ${u}`);

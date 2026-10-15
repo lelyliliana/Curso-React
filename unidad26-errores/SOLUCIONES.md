@@ -12,19 +12,11 @@ La implementación completa está en [App.jsx](ejemplo/App.jsx). Si importa un c
 
 getDerivedStateFromError marca el estado del boundary. El evento utiliza try/catch y un mensaje local. Si Widget siempre lanza, el reintento vuelve a producir fallback; reiniciar identidad no arregla una regla incorrecta ni un módulo ausente. Console puede mostrar el error deliberado de desarrollo: distínguelo de una excepción inesperada. No muestres la pila al usuario final.
 
-## Contraste que debes poder reproducir
+## Resolución concreta de la práctica
 
-Render fallido; encabezado preservado; reintento; evento manejado; causa persistente.
+El fallo de render se captura en LimiteError. El fallo de evento se captura en el propio onClick y actualiza errorEvento. Reintentar funciona en la referencia porque cambia la condición y la identidad del límite. Si la causa persiste, vuelve el fallback. En desarrollo puede aparecer un diagnóstico del fallo deliberado en Console; clasifícalo sin confundirlo con una excepción inesperada en las demás unidades.
 
-Compara la entrada y el resultado en la referencia antes de evaluar una variante. Identifica la primera operación que cambia el significado: el punto de conversión, una identidad, una dependencia, una transición o un efecto según el tema. Un mensaje de error distinto puede ser aceptable; presentar un fallo como éxito o perder la identidad de los datos no lo es.
-
-## Comprobación y límites
-
-Conserva casos de entrada y acciones observables. Las [pruebas del curso](../docs/VERIFICACION.md) verifican contratos concretos y rutas; no demuestran todos los programas que puedas construir a partir de ellos. Si agregas una regla nueva, incorpora un caso que falle al romperla, sin convertir cada línea de implementación en una aserción equivalente.
-
-Para los componentes con controles, compara teclado, etiqueta y foco después de cambiar estado. Para efectos o red, comprueba además limpieza y resultados que lleguen tarde. Para ejemplos puros, revisa que la entrada no se modifique accidentalmente. Justifica qué comprobación aplica al tema en lugar de repetir una lista de herramientas sin evidencia.
-
-[Volver a la práctica](PRACTICA.md)
+[Seguir el recorrido del código](DESARROLLO.md) · [Volver a la práctica](PRACTICA.md)
 
 ---
 
